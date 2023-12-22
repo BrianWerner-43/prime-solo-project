@@ -19,7 +19,7 @@ const userReducer = (state = {}, action) => {
       // };
     // case 'SET_GUEST_USER':
     //   return {
-    //     loggedIn: false,
+    //     loggedIn: true,
     //     user: action.payload
     //   }
     default:

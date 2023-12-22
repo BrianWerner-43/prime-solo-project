@@ -13,7 +13,14 @@ CREATE TABLE "user" (
 CREATE TABLE "recipes" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INT  REFERENCES "user",
-    "name" text,
-    "content" text,
-    "image_url" VARCHAR (2083)
+    "title" VARCHAR(250) NOT NULL,
+    "image_url" VARCHAR (2083),
+    "description" TEXT NOT NULL
 );
+
+
+-------[ STARTER RECIPES ]--------
+
+INSERT INTO "recipes" ("title", "image_url", "description")
+VALUES
+("Avocado Toast w/ burrata", "images/Avocado-Toast.jpeg", "1/2 TBS Olive oil, 1ea slice sourdough bread(toasted), 1/2 avocado(diced and seasoned with salt with and lime juice), 1/3 cup cherry tomatoes(lightly roasted), Burrata cheese, Basil leaves for garnish, Assemble:, Spread the avocado on toast, top with the tomatoes, burrata, basil leaves, and drizzle with the olive oil")

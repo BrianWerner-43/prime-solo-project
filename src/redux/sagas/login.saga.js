@@ -55,7 +55,7 @@ function* logoutUser(action) {
 
     // Handling logout for a guest
     // if(action.payload.isGuest) {
-    //   yield put({type: 'SET_GUEST_USER'})
+    //   yield put({type: 'SET_GUEST_USER', payload: []})
     // } else {
     yield put({ type: 'UNSET_USER' });
     // }
