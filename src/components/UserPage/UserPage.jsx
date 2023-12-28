@@ -11,7 +11,8 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      {/* <p>Your ID is: {user.id}</p> */}
+      {/* message to let the user know whta recipes they have */}
+      {/* map over recentRecipes((userRecipes, i)) */}
       <LogOutButton className="btn" />
     </div>
 

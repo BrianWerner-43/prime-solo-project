@@ -24,6 +24,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+// recipe router for getting all the recipes
 
 
 // Serve static files
