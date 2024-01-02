@@ -8,10 +8,10 @@ const router = express.Router();
 /**
  * GET route for recipes
  */
-router.get('/', (req, res) => {
+router.get('/:userId', (req, res) => {
     const queryText = `SELECT * FROM "recipes" WHERE "user_id" = $1;`;
 
-    pool.query(queryText, [req.user.id])
+    pool.query(queryText, [req.params.userId])
     .then(response => {
         console.log('Checking the response from the DB', response.rows);
         res.send(response.rows)
