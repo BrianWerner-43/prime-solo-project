@@ -9,12 +9,15 @@ const router = express.Router();
  * GET route for recipes
  */
 router.get('/:userId', (req, res) => {
+    const userId = req.params.userId;
     const queryText = `SELECT * FROM "recipes" WHERE "user_id" = $1;`;
-
-    pool.query(queryText, [req.params.userId])
-    .then(response => {
-        console.log('Checking the response from the DB', response.rows);
-        res.send(response.rows)
+    const sqlValues = [userId]
+   
+    pool.query(queryText, sqlValues)
+    .then(result => {
+        console.log('Checking req.params.userId', req.params.userId);
+        console.log('Checking the response from the DB', result.rows);
+        res.send(result.rows)
     }).catch(error => {
         console.log('Error with the get route on the server side:', error);
         res.sendStatus(500)
