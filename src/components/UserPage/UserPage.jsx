@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 
 
@@ -8,7 +7,6 @@ import {useSelector, useDispatch} from 'react-redux';
 // They should be able to click on the recipe and be navigated to the recipe details page
 function UserPage() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const user = useSelector((store) => store.user);
   const recipes = useSelector((store) => store.recipes);
   console.log('Checking for recipes!', recipes)
@@ -17,10 +15,7 @@ function UserPage() {
     dispatch({type: 'SAGA_GET_RECIPE'});
   }, []);
 
-  // The handle click for the user to click on the recipe
-  const handleRecipeClick = (recipeId) => {
-    history.push(`/recipeDetails/${recipeId}`)
-  };
+  
 
   
 
@@ -31,11 +26,9 @@ function UserPage() {
       <p>Here are you recipes!</p>
       {/* map over recipes to dispaly */}
       <ul>
-        {recipes && recipes.map((recipe) => (
-          <li key={recipe.id} onClick={() =>
-          handleRecipeClick(recipe.id)}>
-            <p>{recipe.title}</p>
-          </li>
+        {recipes && recipes.map((recipe, i) => (
+         <li>recipe={recipe} key={i}</li> 
+        //  Implement RecipeItem here
         ))}
       </ul>
       
