@@ -9,7 +9,7 @@ import RecipeItem from '../RecipeItem/RecipeItem';
 function UserPage() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-  const recipes = useSelector((store) => store.recipes);
+  const recipes = useSelector((store) => store.recipe);
   console.log('Checking for recipes!', recipes)
 
   useEffect(() => {

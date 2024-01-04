@@ -53,7 +53,7 @@ function RecipeItem({recipe}) {
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                R
+               👨‍🍳 
               </Avatar>
             }
             

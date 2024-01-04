@@ -21,7 +21,7 @@ CREATE TABLE "recipes" (
 
 -------[ STARTER RECIPES ]--------
 
-INSERT INTO "recipes" ("title", "image_url", "description")
+INSERT INTO "recipes" ("user_id", "title", "image_url", "description")
 VALUES
 ('Avocado Toast w/ burrata', 'images/Avocado-Toast.jpeg', '1/2 TBS Olive oil, 1ea slice sourdough bread(toasted), 1/2 avocado(diced and seasoned with salt with and lime juice), 1/3 cup cherry tomatoes(lightly roasted), Burrata cheese, Basil leaves for garnish, Assemble:, Spread the avocado on toast, top with the tomatoes, burrata, basil leaves, and drizzle with the olive oil'),
 ('Baked Potato', 'images/baked-potato.jpeg', '4ea Russet potoes(washed), Oil for coating, salt, 1/4 cup sour cream, 3/4 cup cheddar cheese, 1Tbl chopped chives, cooked bacon(optional), Procedure:, with a fork poke multible holes in the potatoes and, bake potoes at 425 degrees F, for 45-60 minutes until tender, let the pototoes rest for 5 minutes, cut a slit down the middle of each potato and place cheese inside and bake for 5 minutes until cheese is melted, place a dollop of sour cream on each potato, and garnish with the chives '),
