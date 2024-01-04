@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import RecipeItem from '../RecipeItem/RecipeItem';
 
 
 // This page will display the users recipes
@@ -25,12 +26,12 @@ function UserPage() {
       <h2>Welcome, {user.username}!</h2>
       <p>Here are you recipes!</p>
       {/* map over recipes to dispaly */}
-      <ul>
         {recipes && recipes.map((recipe, i) => (
-         <li>recipe={recipe} key={i}</li> 
+          
         //  Implement RecipeItem here
+         <RecipeItem recipe={recipe} key={i} />
         ))}
-      </ul>
+      
       
     </div>
 

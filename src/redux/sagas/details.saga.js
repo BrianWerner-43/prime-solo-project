@@ -5,7 +5,7 @@ import axios from 'axios';
 function* setDetailsPage(action) {
     try {
         const results = yield axios.get(`/api/details/${action.payload}`)
-        yield put({type: "SET_DETAILS", payload: results.data[0]})
+        yield put({type: "SET_DETAILS", payload: results.data})
 
     }catch {
         console.log('Error with details in GET/saga')

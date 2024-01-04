@@ -11,14 +11,17 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 
   
   
 function RecipeItem({recipe}) {
-// useDispatch to call the saga
-// useHistory to push to details page
+    const dispatch = useDispatch();
+    const history = useHistory();
+
 
 // Using Material UI complex Interaction card
     const ExpandMore = styled((props) => {
@@ -32,8 +35,17 @@ function RecipeItem({recipe}) {
         }),
       }));
       const [expanded, setExpanded] = React.useState(false);
+     
+      // useHistory to push to details page
       const handleExpandClick = () => {
+        console.log('recipe:', recipe);
         setExpanded(!expanded);
+         // useDispatch to call the saga
+         dispatch({
+            type: "SAGA_GET_DETAILS",
+            payload: recipe.id
+         })
+         history.push(`/details/${recipe.id}`)
       };
 
       return (
@@ -48,6 +60,7 @@ function RecipeItem({recipe}) {
           />
           <CardMedia
             sx={{height: 300}}
+            id={recipe.user_id}
             image={recipe.image_url}
             title={recipe.title}
           />
