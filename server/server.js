@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const recipeRouter = require('./routes/recipe.router');
 const detailsRouter = require('./routes/details.router');
+const recipeItemRouter = require('./routes/recipeItem.router');
 
 
 // Body parser middleware
@@ -30,6 +31,8 @@ app.use('/api/user', userRouter);
 app.use('/api/recipe', recipeRouter);
 // details router
 app.use('/api/details', detailsRouter);
+// recipeInfo router used for the RecipeDetails page
+app.use('/api/recipeItem', recipeItemRouter);
 
 
 // Serve static files

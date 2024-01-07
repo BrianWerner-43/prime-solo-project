@@ -18,7 +18,7 @@ function RecipeItem({recipe}) {
          // useDispatch to call the saga
          const handleClick = () => {
          dispatch({
-            type: "SAGA_GET_DETAILS",
+            type:"SAGA_GET_RECIPES",
             payload: recipe.id
          })
          history.push(`/details/${recipe.id}`);
@@ -34,6 +34,7 @@ function RecipeItem({recipe}) {
             id={recipe.user_id}
             image={recipe.image_url}
             title={recipe.title}
+            description={recipe.descri}
             onClick={handleClick}
           />
           <CardContent>

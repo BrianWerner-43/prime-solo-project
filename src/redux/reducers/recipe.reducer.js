@@ -1,7 +1,7 @@
 
 const recipeReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_RECIPE':
+        case 'GET_RECIPE':
             return action.payload;
         default:
             return state;
