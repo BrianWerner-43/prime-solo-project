@@ -23,9 +23,8 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Here are you recipes!</p>
-      {/* map over recipes to dispaly */}
-      
-        {recipes && recipes.map((recipe, i) => (
+      {/* map over recipes to dispaly */}   
+        {recipes.map((recipe, i) => (
           
         //  Implement RecipeItem here
          <RecipeItem recipe={recipe} key={i} />

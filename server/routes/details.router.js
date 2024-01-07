@@ -7,6 +7,9 @@ router.get('/:id', (req, res) => {
     const idToGet = req.params.id;
     console.log('Checking the idToGet', idToGet);
 
+
+    // Query for just displaying the recipes
+
     const queryText = `
     SELECT * FROM recipes
       WHERE recipes.id = $1;`;

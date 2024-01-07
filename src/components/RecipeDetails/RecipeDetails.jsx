@@ -11,12 +11,30 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 
 
 function RecipeDetails({}) {
+  
+  const dispatch = useDispatch();
+  const ID = useParams();
+  const recipe = useSelector(store => store.details);
+
+
+// Sending a call to the store to retrieve the recipe details for the user
+  
+  useEffect(() =>{
+    console.log('Expect to get the ids:', ID);
+    dispatch({
+      type: "SAGA_GET_DETAILS",
+      payload: ID.id
+    })
+  }, [])
+
+
     // Using Material UI complex Interaction card
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
@@ -34,13 +52,19 @@ function RecipeDetails({}) {
         console.log('recipe:', recipe);
         setExpanded(!expanded);
       }
-      // Make a call to the store to retrieve the data for recipe details
-      // useEffect and dispatch 
+      
+
 
 
     return (
-    // Should render the complex Interaction card
-    <Card sx={{ maxWidth: 345 }}>
+    // Mapping over the users recipes and display the selected rcipe on the DOM
+    <div>
+      {recipe.map((item) => (
+        <Card key={item.id} sx={{ maxWidth: 345}}>
+
+      
+
+    {/* // Should render the complex Interaction card */} 
     <CardHeader
       avatar={
         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -51,13 +75,14 @@ function RecipeDetails({}) {
     />
     <CardMedia
       sx={{height: 300}}
-      id={recipe.user_id}
-      image={recipe.image_url}
-      title={recipe.title}
+      id={item.user_id}
+      image={item.image_url}
+      title={item.title}
+      
     />
     <CardContent>
       <Typography variant="body2" color="text.secondary">
-        {recipe.title}
+        {item.title}
       </Typography>
     </CardContent>
     <CardActions disableSpacing>
@@ -74,11 +99,13 @@ function RecipeDetails({}) {
       <CardContent>
         <Typography paragraph>Method:</Typography>
         <Typography paragraph>
-          {recipe.description}
+          {item.description}
         </Typography>    
       </CardContent>
     </Collapse>
   </Card>
+  ))}
+  </div>
     )
 
 }

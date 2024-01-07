@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
   recipe, // contains the user recipes
-  details, // contains
+  details, // contains the recipe details
 });
 
 export default rootReducer;
