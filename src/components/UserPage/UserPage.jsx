@@ -23,13 +23,17 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Here are you recipes!</p>
-      {/* map over recipes to dispaly */}   
+      <div className="card-container">
+      
+        {/* map over recipes to dispaly */} 
         {recipes.map((recipe, i) => (
+         
           
         //  Implement RecipeItem here
          <RecipeItem recipe={recipe} key={i} />
+         
         ))}
-      
+      </div>
       
       
     </div>

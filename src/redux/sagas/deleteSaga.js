@@ -9,6 +9,7 @@ function* deleteRecipe(action) {
         // sending a request to the database with the ID of the item was deleted
         yield axios.delete(`/api/recipe/${action.payload}`);
         // updating the DOM with another GET request 
+        console.log('Checking to see what got deleted:',action.payload);
         yield put({type: 'SAGA_GET_RECIPE'});
     }catch(error) {
         console.log('Error deleting from deleteSaga:', error);

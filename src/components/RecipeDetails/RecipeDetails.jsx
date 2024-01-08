@@ -10,11 +10,17 @@ function RecipeDetails() {
   const history = useHistory();
   const dispatch = useDispatch();
   const ID = useParams();
+  const [showModal, setShowModal] = useState(false);
   const details = useSelector(store => store.setDetailsReducer);
-  const recipe = useSelector(store => store.setRecipes)
+  
 
   // Delete function
+   // also use a modal to give the user the option if they want to delete recipe or not
   const handleDelete = () => {
+    setShowModal(true);
+  }
+  
+   const handleConfirmDelete = () => {
     
     dispatch({
       type: 'DELETE_RECIPE',
@@ -24,8 +30,12 @@ function RecipeDetails() {
 
   };
 
+  const handleCancelDelete = () => {
+    setShowModal(false);
+  }
+
   // Edit function that when clicked it will bring the user to the edit recipe page
-  // also use a modal to give the user the option if they want to delete recipe or not
+  
   const handleEditBtn = (id) => {
     history.push(`/edit/${id}`)
     
@@ -61,15 +71,23 @@ function RecipeDetails() {
       <button className="delete-btn" onClick={handleDelete}>Delete</button>
       <button className="edit-btn"  onClick={handleEditBtn}>Edit</button>
       <button className="add-btn" onClick={handleAddBtn}>Add Recipe</button>
+      {/* Modal for confirming and canceling the delete */}
+      {showModal&& (
+      <div className="modal">
+       <div className="modal-content">
+       <h2>Are you sure you want to delete {details.title}</h2>
+       <button className="modalBtn" type="button" onClick={handleConfirmDelete}>Yes delete</button>
+       <button className="modalBtn" type="button" onClick={handleCancelDelete}>No thanks</button>
+
+       </div>
+      </div>
+    )}
       
      </div>
     </div>
+    
   )
   
-
-
-    
-
 }
 
 export default RecipeDetails;

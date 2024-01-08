@@ -26,9 +26,10 @@ function RecipeItem({recipe}) {
       
 
       return (
+        
         //   Using Mateial Ui to make the recipe images into cards logic here
-        <Grid className="card-border" data-testid="movieItem">
-        <Card sx={{ minWidth: 200, maxWidth: 200, minHeight: 300 }}>
+        <Grid className="card-border">
+        <Card sx={{ minWidth: 150, maxWidth: 150, minHeight: 150 }}>
           <CardMedia
             sx={{ height: 300 }}
             id={recipe.user_id}
@@ -37,8 +38,8 @@ function RecipeItem({recipe}) {
             description={recipe.descri}
             onClick={handleClick}
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+          <CardContent className="card-bottom">
+            <Typography gutterBottom variant="h6" component="div">
               {recipe.title}
             </Typography>
           </CardContent>

@@ -1,5 +1,5 @@
 html,
-body,
+/* body, */
 #react-root {
   height: 100%;
 }
@@ -7,12 +7,15 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  flex-flow: row;
 }
 
 img {
   display: inline-block;
+  flex-direction: row-reverse;
   max-width: 100%;
 }
+
 
 /*-------------------------------------------------------------
 Styling for redipe cards
@@ -21,8 +24,19 @@ Styling for redipe cards
   border: solid 2px black;
   margin: 5px;
   width: fit-content;
+  flex-flow: column;
+  
   
 }
+.card-bottom {
+  height: 40px;
+}
+.card-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+
 
 /*-----------------------------------------------------------------
 Styling for buttons
