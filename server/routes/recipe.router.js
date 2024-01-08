@@ -3,6 +3,19 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 
+// Delete request to the database
+router.delete('/delete/:id', (req, res) => {
+    const queryText = `DELETE FROM recipes WHERE id = $1;`;
+
+    pool.query(queryText, [req.params.id])
+    .then(response => {
+        res.sendStatus(200)
+    }).catch(error => {
+        console.log('error with delete in the server', error);
+        res.sendStatus(500)
+    })
+});
+
 
 
 /**
