@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import './RecipeDetails.css';
@@ -11,17 +11,21 @@ function RecipeDetails() {
   const dispatch = useDispatch();
   const ID = useParams();
   const details = useSelector(store => store.setDetailsReducer);
+  const recipe = useSelector(store => store.setRecipes)
 
   // Delete function
   const handleDelete = () => {
+    
     dispatch({
       type: 'DELETE_RECIPE',
       payload: details.id
     })
+    history.push('/');
 
   };
 
   // Edit function that when clicked it will bring the user to the edit recipe page
+  // also use a modal to give the user the option if they want to delete recipe or not
   const handleEditBtn = (id) => {
     history.push(`/edit/${id}`)
     
@@ -31,9 +35,6 @@ function RecipeDetails() {
   const handleAddBtn = () => {
     history.push('/addRecipe')
   }
-  
-
-
 
 // Sending a call to the store to retrieve the recipe details for the user
   

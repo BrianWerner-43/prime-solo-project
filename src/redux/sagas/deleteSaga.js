@@ -4,10 +4,10 @@ import axios from 'axios';
 function* deleteRecipe(action) {
     try {
         // checking to see if the ID that was sent over
-        const id = action.payload;
-        console.log('Making sure this is the id we are deleting:', action.payload.id);
+        // const id = action.payload;
+        console.log('Making sure this is the id we are deleting:', action.payload);
         // sending a request to the database with the ID of the item was deleted
-        yield axios.delete(`/recipe/delete/${id}`);
+        yield axios.delete(`/api/recipe/${action.payload}`);
         // updating the DOM with another GET request 
         yield put({type: 'SAGA_GET_RECIPE'});
     }catch(error) {

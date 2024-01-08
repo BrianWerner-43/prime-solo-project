@@ -4,10 +4,12 @@ const router = express.Router();
 
 
 // Delete request to the database
-router.delete('/delete/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     const queryText = `DELETE FROM recipes WHERE id = $1;`;
+    console.log('req.params.id:', req.params.id);
+    const sqlValues = [req.params.id]
 
-    pool.query(queryText, [req.params.id])
+    pool.query(queryText, sqlValues)
     .then(response => {
         res.sendStatus(200)
     }).catch(error => {
