@@ -18,8 +18,8 @@ function RecipeItem({recipe}) {
          // useDispatch to call the saga
          const handleClick = () => {
          dispatch({
-            type:"SAGA_GET_RECIPES",
-            payload: recipe.id
+            type:"GET_DETAILS",
+            payload: recipe
          })
          history.push(`/details/${recipe.id}`);
         }

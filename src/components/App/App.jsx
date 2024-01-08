@@ -14,6 +14,7 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
+import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
@@ -112,7 +113,8 @@ function App() {
           <Route
             exact
             path="/details/:id">
-              
+
+            <RecipeDetails />
             </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

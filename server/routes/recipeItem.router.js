@@ -8,15 +8,14 @@ router.get('/:id', (req,res) => {
     console.log('Testing the the id rescipe item:', idToGet);
 
     const queryText = `
-    SELECT "recipes"."user_id" AS "recipe"
-      FROM "recipes"
-      JOIN "user" ON "user"."id" = "recipes"."user_id"
+    SELECT * FROM recipes
       WHERE recipes.id = $1;`;
+
 
     pool.query(queryText, [idToGet])
     .then((result) => {
         console.log('result.rows:', result.rows);
-        res.send(result.rows);
+        res.send(result.rows[0]);
     }).catch((error) => {
         console.log('Error with recipe item query:', queryText)
         res.sendStatus(500)

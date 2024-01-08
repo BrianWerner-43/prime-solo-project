@@ -16,8 +16,8 @@ router.get('/:id', (req, res) => {
 
     pool.query(queryText, [idToGet])
     .then((result) => {
-        console.log('result.rows:', result.rows);
-        res.send(result.rows);
+        console.log('result.rows:', result.rows[0]);
+        res.send(result.rows[0]);
     }).catch((error) => {
         console.log('Error with our query:', queryText);
         res.sendStatus(500)
