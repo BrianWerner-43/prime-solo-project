@@ -11,6 +11,26 @@ function RecipeDetails() {
   const dispatch = useDispatch();
   const ID = useParams();
   const details = useSelector(store => store.setDetailsReducer);
+
+  // Delete function
+  const handleDelete = () => {
+    dispatch({
+      type: 'DELETE_RECIPE',
+      payload: details.id
+    })
+
+  };
+
+  // Edit function that when clicked it will bring the user to the edit recipe page
+  const handleEditBtn = (id) => {
+    history.push(`/edit/${id}`)
+    
+  };
+
+  //Add button that when clicked it will bring the user to the add recipe page
+  const handleAddBtn = () => {
+    history.push('/addRecipe')
+  }
   
 
 
@@ -37,6 +57,10 @@ function RecipeDetails() {
       <p>{details.description}</p>
 
       <button className="back-btn" onClick={() => history.goBack()}>👈</button>
+      <button className="delete-btn" onClick={handleDelete}>Delete</button>
+      <button className="edit-btn"  onClick={handleEditBtn}>Edit</button>
+      <button className="add-btn" onClick={handleAddBtn}>Add Recipe</button>
+      
      </div>
     </div>
   )

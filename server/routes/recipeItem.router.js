@@ -5,7 +5,7 @@ const router = express.Router();
 // Getting the detalis for an recipe item for the details page
 router.get('/:id', (req,res) => {
     const idToGet = req.params.id;
-    console.log('Testing the the id rescipe item:', idToGet);
+    console.log('Testing the the id recipe item:', idToGet);
 
     const queryText = `
     SELECT * FROM recipes
