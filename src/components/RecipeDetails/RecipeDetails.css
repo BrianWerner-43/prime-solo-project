@@ -2,29 +2,32 @@ body {
     background-color: lightseagreen;
 }
 
-.modal {
-    display: flex;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 40%;
-    background-color: rgb(225, 20, 20);
+  
+.image-border {
+    border: 2px solid black;
+    width: fit-content;
 }
 
-.modal-content {
-    background-color: rgb(43, 179, 224);
-    margin: 15% auto;
-    padding: 10px;
-    border-radius: 10px solid black;
-    width: 60%;
-}
-
-.modalBtn {
-    margin: 10px;
-    border-radius: 10px;
-    background-color: rgb(18, 223, 73);
-}
-
-
+ .back-btn {
+    width: fit-content;
+    height: 30px;
+    margin: 5px;
+  }
+  .delete-btn {
+    width: 30%;
+    height: 30px;
+    margin: 5px;
+    background-color: #e01616;
+  }
+  
+  .edit-btn {
+    width: 30%;
+    height: 30px;
+    margin: 5px;
+  }
+  
+  .add-btn {
+    width: fit-content;
+    height: 30px;
+    margin: 5px;
+  } 

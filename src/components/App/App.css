@@ -29,7 +29,7 @@ Styling for redipe cards
   
 }
 .card-bottom {
-  height: 40px;
+  height: 60px;
 }
 .card-container {
   flex-wrap: wrap;
@@ -38,12 +38,7 @@ Styling for redipe cards
 
 
 
-/*-----------------------------------------------------------------
-Styling for buttons
-------------------------------------------------------------------*/
-.back-btn {
-  width: 40%;
-}
+
 
 /* --------------------------------------------------------------------------------
 Container
