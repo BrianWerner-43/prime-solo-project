@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 const cloudinaryUpload = require('../modules/cloudinary.config');
+
 // Using cloudinary so that a user can add an image
 router.post('/', cloudinaryUpload.single('image'), async (req, res) => {
     console.log('req.body----->', req.body);
