@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-export default function RecipeForm() {
+function AddRecipe() {
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);
@@ -10,3 +11,4 @@ export default function RecipeForm() {
   const [image_url, setImage_url] = useState('');
   const [recipe, setRecipe] = useState('');
 }
+export default AddRecipe;

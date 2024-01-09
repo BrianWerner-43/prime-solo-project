@@ -101,7 +101,7 @@ function RecipeDetails() {
     <Card sx={{ maxWidth: 400 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="logo">
             cwc
           </Avatar>
         }

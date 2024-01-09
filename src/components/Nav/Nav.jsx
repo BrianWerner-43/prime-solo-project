@@ -32,6 +32,10 @@ function Nav() {
               Details
             </Link>
 
+            <Link className="navLink" to="/addRecipe">
+              Add recipe
+            </Link>
+
             <Link className="navLink" to="/info">
               Info Page
             </Link>
