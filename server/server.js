@@ -12,6 +12,8 @@ const userRouter = require('./routes/user.router');
 const recipeRouter = require('./routes/recipe.router');
 const detailsRouter = require('./routes/details.router');
 const recipeItemRouter = require('./routes/recipeItem.router');
+const addRecipeRouter = require('./routes/addRecipe.router');
+require('dotenv').config();
 
 
 // Body parser middleware
@@ -33,6 +35,8 @@ app.use('/api/recipe', recipeRouter);
 app.use('/api/details', detailsRouter);
 // recipeInfo router used for the RecipeDetails page
 app.use('/api/recipeItem', recipeItemRouter);
+// addRecipe router to add recipe and image
+app.use('/api/addRecipe', addRecipeRouter);
 
 
 // Serve static files
