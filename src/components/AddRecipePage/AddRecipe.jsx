@@ -13,8 +13,36 @@ function AddRecipe() {
 
   const user = useSelector((store) => store.user);
 
-  const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
   const [image_url, setImage_url] = useState('');
   const [recipe, setRecipe] = useState('');
+
+  //will have to call to the store for the saga and reducer
+  const handleSubmit = (event) => {
+
+  }
+
+  return (
+    <div className="inputs">
+    <form onSubmit={handleSubmit}>
+      <input onChange={(event) => setTitle(event.target.value)}
+             placeholder="Recipe Title"
+             value={title}
+             />
+             <br></br>
+      <input onChange={(event) => setImage_url(event.target.value)}
+             placeholder="Add Image"
+             value={image_url}
+             />
+             <br></br>
+      <textarea onChange={(event) => setRecipe(event.target.value)}
+             placeholder="Add Recipe"
+             value={recipe}
+             />
+             <br></br>
+      <button>Submit</button>
+    </form>
+    </div>
+  )
 }
 export default AddRecipe;
