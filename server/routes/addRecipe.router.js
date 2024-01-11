@@ -7,20 +7,20 @@ const cloudinaryUpload = require('../modules/cloudinary.config');
 router.post('/', cloudinaryUpload.single('image'), async (req, res) => {
     console.log('req.body----->', req.body);
     console.log('req.file.path---->', req.file.path);
-    const recipeTitle = req.body;
+    const recipeTitle = req.body.title;
     const imageUrl = req.file.path;
-    const recipe = req.body;
+    const recipe = req.body.recipe;
     const userId = req.user.id;
 
 
     const sqltext = `
     INSERT INTO "recipes"
-     ("user_id", "title","image_url", "description")
+     ( "image_url", "user_id", "title", "description")
      VALUES
      ($1, $2, $3, $4)
      RETURNING "id";`;
 
-     const insertRecipeValues = [userId,recipeTitle, imageUrl, recipe ]
+     const insertRecipeValues = [ imageUrl, userId, recipeTitle, recipe ]
 
      // query to add recipe title, recipe image and recipe
      pool.query(sqltext, insertRecipeValues)

@@ -11,7 +11,7 @@ function AddRecipe() {
   // const addRecipe = useSelector((store) => store.addRecipe);
   const formData = new FormData();
   const [title, setTitle] = useState('');
-  const [image_url, setImage_url] = useState('');
+  const [image_url, setImage_url] = useState([]);
   const [recipe, setRecipe] = useState('');
   
     
@@ -19,8 +19,8 @@ function AddRecipe() {
   //will have to call to the store for the saga and reducer
   const handleSubmit = (event) => {
     event.preventDefault();
+    formData.append('image', image_url[0]);
     formData.append('title', title);
-    formData.append('image', image_url);
     formData.append('recipe', recipe);
 
     
@@ -39,10 +39,10 @@ function AddRecipe() {
              value={title}
              />
              <br></br>
-      <input onChange={(event) => setImage_url(event.target.files[0])}
+      <input onChange={(event) => setImage_url(event.target.files)}
              type="file"
-             placeholder="Add Image"
-             value={image_url}
+             name='image'
+             
              />
              <br></br>
       <textarea onChange={(event) => setRecipe(event.target.value)}

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function* addrecipe(action) {
     try {
+      console.log('action.payload:', action.payload);
       const headers = {
             'content-type': 'multipart/form-data'
         }
