@@ -1,24 +1,33 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
-// This page will have 3 inputs:
-// 1 for recipe name,
-// 1 for an image
-// A text box for the user to enter their recipe
-// A submit button
+// This function that will handle the inputs for the user to be able 
+// to add a new recipe with an image
 function AddRecipe() {
   const dispatch = useDispatch();
 
-  const user = useSelector((store) => store.user);
-
+  // const addRecipe = useSelector((store) => store.addRecipe);
+  const formData = new FormData();
   const [title, setTitle] = useState('');
   const [image_url, setImage_url] = useState('');
   const [recipe, setRecipe] = useState('');
+  
+    
 
   //will have to call to the store for the saga and reducer
   const handleSubmit = (event) => {
+    event.preventDefault();
+    formData.append('title', title);
+    formData.append('image', image_url);
+    formData.append('recipe', recipe);
+
+    
+    dispatch({
+      type: 'SAGA/ADD_RECIPE',
+      payload: formData
+    })
 
   }
 
@@ -30,7 +39,8 @@ function AddRecipe() {
              value={title}
              />
              <br></br>
-      <input onChange={(event) => setImage_url(event.target.value)}
+      <input onChange={(event) => setImage_url(event.target.files[0])}
+             type="file"
              placeholder="Add Image"
              value={image_url}
              />

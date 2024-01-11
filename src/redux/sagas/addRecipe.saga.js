@@ -12,9 +12,8 @@ function* addrecipe(action) {
         headers: headers,
         data: action.payload 
       });
-      
-
-
+      yield put({type: 'GET_RECIPE', payload: response.data});
+      console.log('Checking the SAGA/POST recipe:', response.data)
     } catch (error) {
         console.log('Error adding recipe:', error);
     }
