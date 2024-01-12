@@ -11,7 +11,8 @@ function UserPage() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const recipes = useSelector((store) => store.recipe);
-  console.log('Checking for recipes!', recipes)
+  console.log('Checking for recipes!')
+  
 
   //This is calling to the store to obtain the recipes
   useEffect(() => {
@@ -20,32 +21,22 @@ function UserPage() {
   }, []);
 
   
-// 
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
+      <h3>Here are your Recipes!</h3>
      
-
-    {/* Using some conditional rendering to check the state of displaying the recipes
-    without having to refrsh */}
-    {/* {!recipes ? (
-      <p>Loading recipes...</p>
-    ) : recipes.length === 0 ? (
-      <p>No Recipes have been found.</p>
-    ) : ( */}
-      <>
       <div className="card-container">
         {/* map over recipes to dispaly */} 
+        
         {recipes.map((recipe, i) => (    
           
         //  Implement RecipeItem here
          <RecipeItem recipe={recipe} key={i} />
          
         ))}
-      </div>
-      </>
-       {/* )} */}
-      
+      </div>  
     </div>
   );
 }

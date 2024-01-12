@@ -10,7 +10,7 @@ function AddRecipe() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // const addRecipe = useSelector((store) => store.addRecipe);
+  
   const formData = new FormData();
   const [title, setTitle] = useState('');
   const [image_url, setImage_url] = useState([]);
@@ -47,7 +47,7 @@ function AddRecipe() {
             name="title"
              placeholder="Recipe Title"
              value={title}
-             autoComplete='title'
+             
              />
              <br></br>
       <input onChange={(event) => setImage_url(event.target.files)}

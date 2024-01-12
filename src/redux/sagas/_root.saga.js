@@ -5,7 +5,7 @@ import userSaga from './user.saga';
 import deleteSaga from './deleteSaga';
 import getRecipeSaga from './getRecipe.saga';
 import setRecipesSaga from './setRecipes.saga';
-import getDetailsSaga from './recipeDetals.saga';
+import getDetailsSaga from './recipeDetails.saga';
 import addRecipeSaga from './addRecipe.saga';
 
 // rootSaga is the primary saga.

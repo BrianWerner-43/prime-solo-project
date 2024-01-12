@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import recipe from './recipe.reducer';
-import setRecipes from './setRecipes.reducer'
+import setRecipes from './setRecipes.reducer';
 import setDetailsReducer from './details.reducer';
 import addRecipe from './addRecipe.reducer';
 
@@ -19,6 +19,7 @@ const rootReducer = combineReducers({
   setRecipes, // contains the recipes for the recipe item
   setDetailsReducer, // contains the recipe details
   addRecipe, // contains the added recipes
+  
 });
 
 export default rootReducer;

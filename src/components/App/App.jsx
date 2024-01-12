@@ -15,6 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import AddRecipe from '../AddRecipePage/AddRecipe';
+import EditPage from '../EditPage/EditPage';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -121,6 +122,11 @@ function App() {
             exact
             path="/addRecipe">
               <AddRecipe />
+            </Route>
+            <Route
+            exact
+            path="/edit">
+              <EditPage />
             </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
