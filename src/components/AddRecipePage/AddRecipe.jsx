@@ -33,6 +33,11 @@ function AddRecipe() {
     history.push('/user');
 
   }
+  // const fillMyForm = () => {
+  //   setTitle('Chicken soup')
+  //   setRecipe('1 tablespoon butter,½ cup chopped onion, ½ cup chopped celery, 4 (14.5 ounce) cans chicken broth,1 (14.5 ounce) can vegetable broth, ½ pound chopped cooked chicken breast,1 ½ cups egg noodles, 1 cup sliced carrots,½ teaspoon dried basil,½ teaspoon dried oregano,salt and ground black pepper to taste, Directions,Melt butter in a pot over medium heat add onion and celery and cook until just tender, about 5 minutes, add chicken broth, vegetable broth, chicken and egg noodles, carrots, basil, oregano, salt, and pepper. Stir to combine and bring to a boil, Reduce heat and simmer for 20 minutes.')  
+   
+  // }
 
   return (
     <div className="container">
@@ -53,6 +58,9 @@ function AddRecipe() {
              <br></br>
       <textarea onChange={(event) => setRecipe(event.target.value)}
             name="recipe"
+            cols="30"
+            rows="20"
+            wrap="hard"
              placeholder="Add Recipe"
              value={recipe}
              autoComplete='recipe'

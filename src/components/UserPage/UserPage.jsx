@@ -28,15 +28,15 @@ function UserPage() {
 
     {/* Using some conditional rendering to check the state of displaying the recipes
     without having to refrsh */}
-    {!recipes ? (
+    {/* {!recipes ? (
       <p>Loading recipes...</p>
     ) : recipes.length === 0 ? (
       <p>No Recipes have been found.</p>
-    ) : (
+    ) : ( */}
       <>
       <div className="card-container">
         {/* map over recipes to dispaly */} 
-        {recipes && recipes.map((recipe, i) => (    
+        {recipes.map((recipe, i) => (    
           
         //  Implement RecipeItem here
          <RecipeItem recipe={recipe} key={i} />
@@ -44,7 +44,7 @@ function UserPage() {
         ))}
       </div>
       </>
-       )}
+       {/* )} */}
       
     </div>
   );

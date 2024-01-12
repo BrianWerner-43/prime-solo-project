@@ -130,7 +130,7 @@ function RecipeDetails() {
         </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>Recipe as fallows:</Typography>
           <Typography paragraph>  
           {details.description}
           </Typography>
