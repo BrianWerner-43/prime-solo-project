@@ -9,13 +9,14 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import './RecipeDetails.css';
 import Swal from 'sweetalert2';
+import { BloodtypeOutlined } from '@mui/icons-material';
 
 
 
@@ -98,17 +99,18 @@ function RecipeDetails() {
   return (
   <div className="container">
     <div className="image-border">
+     
     <Card sx={{ maxWidth: 400 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="logo">
+          <Avatar sx={{ bgcolor: green[500] }} aria-label="logo">
             cwc
           </Avatar>
         }
         title={details.title}  
       />
        <CardMedia
-       sx={{height: 300}}
+       sx={{height: 300 }}
        image={details.image_url}  
       />
       <CardContent>
@@ -129,12 +131,13 @@ function RecipeDetails() {
           <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
+          <Typography paragraph>  
           {details.description}
           </Typography>
       </CardContent>
       </Collapse>
     </Card>
+  
       
       <button className="back-btn" onClick={() => history.goBack()}>👈 Go back</button>
       <button className="add-btn" onClick={handleAddBtn}>Add Recipe</button>
