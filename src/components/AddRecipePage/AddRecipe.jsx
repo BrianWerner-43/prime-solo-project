@@ -61,9 +61,8 @@ function AddRecipe() {
             cols="30"
             rows="20"
             wrap="hard"
-             placeholder="Add Recipe"
-             value={recipe}
-             autoComplete='recipe'
+            placeholder="Add Recipe"
+            value={recipe}
              />
              <br></br>
       <button type="submit">Submit</button>

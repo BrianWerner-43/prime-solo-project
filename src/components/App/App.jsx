@@ -125,7 +125,7 @@ function App() {
             </Route>
             <Route
             exact
-            path="/edit">
+            path="/edit/:id">
               <EditPage />
             </Route>
 

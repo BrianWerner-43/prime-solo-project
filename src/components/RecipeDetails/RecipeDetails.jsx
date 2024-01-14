@@ -76,6 +76,11 @@ function RecipeDetails() {
 
   // Edit function that when clicked it will bring the user to the edit recipe page
   const handleEditBtn = (id) => {
+    // Make a dispatch to the saga for the added recipe
+    dispatch({
+      type: "SAGA_GET_DETAILS",
+      payload: ID.id
+    })
     history.push(`/edit/${id}`)
     
   };
