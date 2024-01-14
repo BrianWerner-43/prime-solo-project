@@ -16,7 +16,8 @@
 .nav-title {
   font-size: 24px;
   font-weight: 700;
-  color: #9fe7ef;
+  background-image: url('/public/images/chef_dude.jpeg');
+  color: #097e8b;
   padding-left: 10px;
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

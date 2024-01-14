@@ -8,7 +8,7 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
 
   const login = (event) => {
     event.preventDefault();
@@ -25,21 +25,23 @@ function LoginForm() {
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
+    history.push('/info')
 
 
   }; // end login
 
-  const handleGuest = () => {
-    console.log('Is handle guest working?');
-    dispatch({
-      type: 'SET_GUEST_USER',
-      payload: {
-        username: 'guest'
+  // const handleGuest = () => {
+  //   console.log('Is handle guest working?');
+  //   dispatch({
+  //     type: 'SET_GUEST_USER',
+  //     payload: {
+  //       username: 'guest'
         
-      }
-    })
-    // history.push('/user')
-  }
+  //     }
+  //   })
+   
+    
+  // }
  
 
   return (
@@ -78,7 +80,7 @@ function LoginForm() {
         <input className="btn" type="submit" name="submit" value="Log In" />
       </div>
       <div>
-        <button className='btn' type="button" onClick={handleGuest}>Continue as Guest</button>
+        {/* <button className='btn' type="button" onClick={handleGuest}>Continue as Guest</button> */}
       </div>
     </form>
   );
