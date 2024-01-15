@@ -6,10 +6,12 @@ import axios from 'axios';
 function* getRecipe() {
     try{
         // using select to retrieve the user ID from the store
+       
         const user_id = yield select((store) => store.user.id)
+        console.log('user.id', user_id);
         // Passing userId as a route parameter that retrieves information for a specific user
         const recipeResponse = yield axios.get(`/api/recipe/${user_id}`);
-        console.log('Recipe data', recipeResponse.data);
+        // console.log('Recipe data', recipeResponse.data);
         yield put({type: 'GET_RECIPE', payload: recipeResponse.data});
        
     } catch(error) {

@@ -6,7 +6,7 @@ import axios from 'axios';
 function* setDetailsPage(action) {
     console.log('In recipe details page', action.payload)
     try {
-        const details = yield axios.get(`/api/recipeItem/${action.payload}`)
+        const details = yield axios.get(`/api/recipeItem/${action.payload.id}`)
         console.log('looking for recipe info data', details.data)
         yield put({type: "GET_DETAILS", payload: details.data});
     }catch {
