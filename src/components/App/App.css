@@ -1,5 +1,12 @@
+/* @font-face {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  src: url("../../../public/chlorinap\ 2.ttf");
+} */
+
+
+
 html,
-/* body, */
+body,
 #react-root {
   height: 100%;
 }
@@ -48,8 +55,30 @@ Container
   padding: 20px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
-  
 }
+.about-me {
+  color: lightskyblue;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+.profile-img {
+  float: left;
+  width: 45%;
+  height: 40p;
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+ 0% { opacity: 0;}
+ 100% {opacity: 1;}
+}
+.info-ptag {
+  color: rgb(25, 218, 25);
+  font-family:'Times New Roman', Times, serif;
+  animation: fadeIn 5s;
+}
+
+
+
 
 /* --------------------------------------------------------------------------------
 Button

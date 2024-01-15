@@ -25,7 +25,7 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         if(recipeImage === '') {
-            formData.append(recipe.image_url)
+            formData.append("image_url",recipe.image_url)
         } 
         else {
             formData.append('image', recipeImage[0])

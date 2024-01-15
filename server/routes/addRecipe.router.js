@@ -45,7 +45,7 @@ router.put('/edit/:id', cloudinaryUpload.single('image'), async (req, res) => {
    }
    const recipeTitle = req.body.title;
    const imageUrl = req.file.path;
-   const recipe = req.body.recipe;
+   const recipe = req.body.recipe.id;
    const userId = req.user.id
 
    const sqlText = `

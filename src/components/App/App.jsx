@@ -139,6 +139,10 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
+        <br />
+        <br />
+        <br />
+        <br />
         <Footer />
       </div>
     </Router>

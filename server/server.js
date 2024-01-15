@@ -31,7 +31,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 // recipe router for getting all the recipes
 app.use('/api/recipe', recipeRouter);
-// details router
+// details router 
 app.use('/api/details', detailsRouter);
 // recipeInfo router used for the RecipeDetails page
 app.use('/api/recipeItem', recipeItemRouter);
