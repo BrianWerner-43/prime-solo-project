@@ -40,11 +40,4 @@ router.get('/:userId', (req, res) => {
   
 });
 
-/**
- * POST route for recipes
- */
-router.post('/', (req, res) => {
-  
-});
-
 module.exports = router;

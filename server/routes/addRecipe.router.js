@@ -33,9 +33,16 @@ router.post('/', cloudinaryUpload.single('image'), async (req, res) => {
      })
 });
 
-router.put('/:id', cloudinaryUpload.single('image'), async (req, res) => {
+router.put('/edit/:id', cloudinaryUpload.single('image'), async (req, res) => {
    console.log('IN OUR PUT ROUTE---->', req.body);
    console.log('req.file.path, PUT ROUTE---->', req.file.path);
+   let recipeImage;
+
+   if(!req.file) {
+      recipeImage = req.body.image_url
+   } else {
+      recipeImage = req.file.path
+   }
    const recipeTitle = req.body.title;
    const imageUrl = req.file.path;
    const recipe = req.body.recipe;
