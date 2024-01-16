@@ -25,7 +25,7 @@ function LoginForm() {
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-    history.push('/info')
+    history.push('/about')
 
 
   }; // end login
@@ -77,7 +77,9 @@ function LoginForm() {
         </label>
       </div>
       <div>
+        <center>
         <input className="btn" type="submit" name="submit" value="Log In" />
+        </center>
       </div>
       <div>
         {/* <button className='btn' type="button" onClick={handleGuest}>Continue as Guest</button> */}

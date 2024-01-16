@@ -77,7 +77,7 @@ function Navbar() {
           <li className="nav" onClick={toAbout}>
             About
             </li>
-          }
+           }
         </nav>
       )
 }

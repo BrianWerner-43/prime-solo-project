@@ -24,7 +24,7 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+      <h2>Welcome, {user.username}</h2>
       <h3>Here are your Recipes!</h3>
      
       <div className="card-container">

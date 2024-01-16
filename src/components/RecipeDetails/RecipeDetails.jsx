@@ -135,8 +135,9 @@ function RecipeDetails() {
         </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Recipe as fallows:</Typography>
-          <Typography paragraph>  
+        <Typography fontFamily={"Noconsequence"} color="green" fontSize={25}paragraph>You can do this!</Typography>
+        <Typography paragraph>Recipe as fallows:</Typography>
+          <Typography fontFamily={"new times roman"}paragraph>  
           {details.description}
           </Typography>
       </CardContent>

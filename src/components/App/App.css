@@ -1,18 +1,33 @@
 /* @font-face {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  src: url("../../../public/chlorinap\ 2.ttf");
+  font-family: "chlorinar";
+  src: url("../../../public/chlorinar.ttf");
 } */
 
+/* @font-face {
+  font-family: "Most Wazted";
+  src: url("../../../public/Most\ Wazted.ttf");
+} */
 
+/* @font-face {
+  font-family: "Simpsonfont";
+  src: url("../../../public/Simpsonfont.ttf");
+} */
+
+@font-face {
+  font-family: "Noconsequence";
+  src: url("../../../public/Noconsequence.ttf");
+}
 
 html,
 body,
 #react-root {
   height: 100%;
+  font-family: "Noconsequence";
+  color: rgb(26, 16, 69);
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "chlorinar"; */
   margin: 0px;
   flex-flow: row;
 }
@@ -53,13 +68,14 @@ Container
 
 .container {
   padding: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Noconsequence";
   font-weight: bold;
-  color: lightskyblue;
+  font-size: large;
+  color:  rgb(16, 4, 69);
 }
 .about-me {
-  color: lightskyblue;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(26, 16, 69);
+  font-family:"Noconsequence";
   text-align: center;
 }
 .profile-img {
@@ -79,8 +95,8 @@ Container
 }
 
 .login-header {
-  color: #08a1b2;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(26, 16, 69);
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
 
@@ -96,30 +112,32 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: #084e4f;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
+  height: 40px;
   cursor: pointer;
 }
 
 .btn_sizeMin {
-  min-height: 50px;
+  min-height: 100px;
   min-width: 100px;
 }
 
 .btn_sizeSm {
   padding: 10px 15px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .btn_sizeFull {
   display: block;
   width: 100%;
+  
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #0b6364;
   text-decoration: none;
 }
 
@@ -161,11 +179,12 @@ Form Treatment
 
 .formPanel {
   box-sizing: border-box;
+  justify-content: center;
   width: 400px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  color: #efefef;
+  color: #78f28ed8;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
   background-image: url('/public/images/my_dream_kitchen.jpeg');
@@ -190,7 +209,7 @@ Navbar
   position: relative;
   padding: 0.5rem 0rem;
   background-color:#045d0c;
-  color:  #58deed;
+  color:  rgb(26, 16, 69);
   box-shadow: 0 2px 2px 2px #A7CDCC;
 }
 .brand-name {
@@ -236,7 +255,8 @@ Navbar
 .navigation-menu.expanded li {
   display: block;
   padding: 24px 10px;
-  color:  #9fe7ef;
+  color:  rgb(26, 16, 69);
+  font-size: large;
 }
 .hamburger {
   /* // removes default border on button element */
@@ -245,7 +265,7 @@ Navbar
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #095a6c;
+  background-color: rgb(4, 79, 75);
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   /* // posi tions the icon to the right and center aligns it vertically */
@@ -274,7 +294,7 @@ Navbar
     width: 100%;
     height: calc(100vh - 45vh);
     background-color:#045d0c;
-    border-top: 1px solid#045d0c;;
+    border-top: 1px solid#0adf1c;;
   }
   .navigation-menu li {
     /* // centers link text and strips off margin */

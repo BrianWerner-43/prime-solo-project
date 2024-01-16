@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ function AddRecipe() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  
+  const user = useSelector((store) => store.user);
   const formData = new FormData();
   const [title, setTitle] = useState('');
   const [image_url, setImage_url] = useState([]);
@@ -41,7 +41,7 @@ function AddRecipe() {
 
   return (
     <div className="container">
-      <h2>Add Your favorite recipes!</h2>
+      <h2>Add Your favorite recipes {user.username}!</h2>
     <form onSubmit={handleSubmit}>
       <input onChange={(event) => setTitle(event.target.value)}
             name="title"

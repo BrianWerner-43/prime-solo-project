@@ -8,6 +8,7 @@ function EditPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const {id} = useParams();
+    const user = useSelector((store) => store.user);
     const recipe = useSelector((store) => store.setDetailsReducer)
     // const formData = new FormData();
     // const [editTitle, setEditTitle] = useState(recipe.title);
@@ -59,7 +60,7 @@ function EditPage() {
 
     return (
        <div className="container">
-        <h2>Edit your recipes here:</h2>
+        <h2>Edit your recipes here: {user.username}:</h2>
         <form onSubmit={handleEdit}>
             <input onChange={(event) => setEditTitle (event.target.value)}
                     name="title"
