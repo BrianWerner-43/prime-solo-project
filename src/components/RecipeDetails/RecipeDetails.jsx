@@ -104,6 +104,7 @@ function RecipeDetails() {
   return (
   <div className="container">
     <div className="image-border">
+      
      
     <Card sx={{ maxWidth: 400 }}>
       <CardHeader

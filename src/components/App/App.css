@@ -23,7 +23,7 @@ body,
 #react-root {
   height: 100%;
   font-family: "Noconsequence";
-  color: rgb(26, 16, 69);
+  color: antiquewhite;
 }
 
 body {
@@ -71,10 +71,10 @@ Container
   font-family: "Noconsequence";
   font-weight: bold;
   font-size: large;
-  color:  rgb(16, 4, 69);
+  color: antiquewhite;
 }
 .about-me {
-  color: rgb(26, 16, 69);
+  color: antiquewhite;
   font-family:"Noconsequence";
   text-align: center;
 }
@@ -88,17 +88,40 @@ Container
  0% { opacity: 0;}
  100% {opacity: 1;}
 }
-.info-ptag {
-  color: rgb(25, 218, 25);
+.about-ptag {
+  color: rgb(23, 218, 23);
   font-family:'Times New Roman', Times, serif;
   animation: fadeIn 5s;
 }
 
+.info-ptag {
+  color: rgb(23, 218, 23);
+  text-decoration: underline;
+}
+
+.tech-tag {
+  color: rgb(23, 218, 23);
+  text-decoration: underline;
+}
+.challenge-tag {
+  color: rgb(23, 218, 23);
+  text-decoration: underline;
+}
+
+.shoutout-tag {
+  color: rgb(23, 218, 23);
+  text-decoration: underline;
+}
+
 .login-header {
-  color: rgb(26, 16, 69);
+  color:antiquewhite;
+  /* color: rgb(31, 10, 124); */
   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
+.info-page {
+  color:antiquewhite;
+}
 
 
 
@@ -145,16 +168,16 @@ Button
 .btn_asLink {
   padding: 0;
   border-width: 0;
-  border-bottom: 1px solid #444;
-  border-radius: 0;
+  border-radius: 10px;
+  border: 2px solid rgb(10, 180, 186);
   background: none;
   font: inherit;
-  color: #5e5a5a;
+  color: #b91f1f;
 }
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #052727;
+  border-color: #066565;
   color: #0aa9ac;
 }
 
@@ -184,7 +207,7 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  color: #78f28ed8;
+  color: rgb(254, 145, 3);
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
   background-image: url('/public/images/my_dream_kitchen.jpeg');
@@ -209,7 +232,7 @@ Navbar
   position: relative;
   padding: 0.5rem 0rem;
   background-color:#045d0c;
-  color:  rgb(26, 16, 69);
+  color: antiquewhite;
   box-shadow: 0 2px 2px 2px #A7CDCC;
 }
 .brand-name {
@@ -255,7 +278,7 @@ Navbar
 .navigation-menu.expanded li {
   display: block;
   padding: 24px 10px;
-  color:  rgb(26, 16, 69);
+  color:  antiquewhite;
   font-size: large;
 }
 .hamburger {
