@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 0 0 30px;
   background-color: #045d0c;
   overflow: hidden;
@@ -15,9 +14,10 @@
 
 .nav-title {
   font-size: 24px; 
+  height: 100px;
   font-weight: 700; 
-  background: #9fe7ef;
-  color: #097e8b;
+  background: #34bdcc;
+  color: #0a8896;
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   
@@ -40,5 +40,5 @@
 }
 
 .navLink:hover {
-  background-color: #03ab68;
+  background-color: #085436;
 }

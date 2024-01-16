@@ -5,7 +5,6 @@ import userSaga from './user.saga';
 import deleteSaga from './deleteSaga';
 import getRecipeSaga from './getRecipe.saga';
 import setRecipesSaga from './setRecipes.saga';
-import getDetailsSaga from './recipeDetails.saga';
 import addRecipeSaga from './addRecipe.saga';
 import editRecipeSaga from './editSaga';
 
@@ -23,7 +22,6 @@ export default function* rootSaga() {
     userSaga(),
     getRecipeSaga(),
     setRecipesSaga(),
-    getDetailsSaga(),
     deleteSaga(),
     addRecipeSaga(),
     editRecipeSaga()

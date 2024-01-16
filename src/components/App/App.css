@@ -55,6 +55,7 @@ Container
   padding: 20px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
+  color: lightskyblue;
 }
 .about-me {
   color: lightskyblue;
@@ -75,6 +76,11 @@ Container
   color: rgb(25, 218, 25);
   font-family:'Times New Roman', Times, serif;
   animation: fadeIn 5s;
+}
+
+.login-header {
+  color: #08a1b2;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
@@ -171,3 +177,123 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+/* --------------------------------------------------------------------------------
+Navbar
+-------------------------------------------------------------------------------- */
+
+.navigation {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 0rem;
+  background-color:#045d0c;
+  color:  #58deed;
+  box-shadow: 0 2px 2px 2px #A7CDCC;
+}
+.brand-name {
+  text-decoration: none;
+  color: #FFA372;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ED6663;
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+.btn-navLink {
+  display: inline-block;
+  background-color:#44d668;
+  text-align: center;
+  padding: 24px 10px;
+  text-decoration: none;
+  font-size: 15px;
+  width: 100%;
+  /* these last two make the logout button in
+  the nav bar look like another link */
+  border: none;
+  cursor: pointer;
+  outline: 0;
+}
+.brand-logo {
+  height: 25px;
+}
+.navigation-menu {
+  margin-left: auto;
+}
+.navigation-menu ul {
+  display: flex;
+  padding: 0;
+}
+.navigation-menu li {
+  /* // removes default disc bullet for li tags and applies margin to left & right side */
+  list-style-type: none;
+  margin: 0 1rem;
+  color:  #9fe7ef;
+}
+.navigation-menu.expanded li {
+  display: block;
+  padding: 24px 10px;
+  color:  #9fe7ef;
+}
+.hamburger {
+  /* // removes default border on button element */
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #095a6c;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  /* // posi tions the icon to the right and center aligns it vertically */
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+.hamburger:hover {
+  background-color: #077c8f;
+}
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .navigation-menu ul {
+    display: none;
+    /* // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar) */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    /* // stacks the li tags vertically  */
+    flex-direction: column;
+    /* // makes menu span full height and width */
+    width: 100%;
+    height: calc(100vh - 45vh);
+    background-color:#045d0c;
+    border-top: 1px solid#045d0c;;
+  }
+  .navigation-menu li {
+    /* // centers link text and strips off margin */
+    text-align: center;
+    margin: 0;
+    color: #FFA372;
+  }
+  .navigation-menu li:hover {
+    background-color:#045d0c;
+  }
+  .navigation-menu.expanded ul {
+    display: block;
+    color: #FFA372;
+  }
+}
+
+
+
+
+
+
+

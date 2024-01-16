@@ -33,7 +33,7 @@ router.post('/', cloudinaryUpload.single('image'), async (req, res) => {
      })
 });
 
-router.put('/edit/:id',(req, res) => {
+router.put('/edit/:id', (req, res) => {
    console.log('IN OUR PUT ROUTE---->', req.body);
    // console.log('req.file.path, PUT ROUTE---->', req.file.path);
    // let recipeImage;
@@ -43,7 +43,7 @@ router.put('/edit/:id',(req, res) => {
    // } else {
    //    recipeImage = req.file.path
    // }
-   // // console.log('req.file is:', req.file);
+   // console.log('req.file is:', req.file);
    // console.log('recipeImage is:', recipeImage)
    const recipeTitle = req.body.title;
    // const imageUrl = req.file.path;
@@ -53,10 +53,10 @@ router.put('/edit/:id',(req, res) => {
 
    const sqlText = `
    UPDATE "recipes"
-      SET  "user_id"= $1, "title"= $2, "description"= $3
+      SET "user_id"= $1, "title"= $2, "description"= $3
       WHERE "id" = $4;`;
 
-   const updateRecipeValues = [userId, recipeTitle, recipeDescription, recipeId]
+   const updateRecipeValues = [ userId, recipeTitle, recipeDescription, recipeId, ]
 
    // query to update the recipe image and recipe details
    pool.query(sqlText, updateRecipeValues)

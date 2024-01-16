@@ -9,7 +9,7 @@ function EditPage() {
     const history = useHistory();
     const {id} = useParams();
     const recipe = useSelector((store) => store.setDetailsReducer)
-    const formData = new FormData();
+    // const formData = new FormData();
     // const [editTitle, setEditTitle] = useState(recipe.title);
     // const [recipeImage, setRecipeImage] = useState('');
     // const [editRecipe, setEditRecipe] = useState(recipe.description);
@@ -26,7 +26,7 @@ function EditPage() {
         event.preventDefault();
         
         // if(recipeImage === '') {
-        //     formData.append('image', recipe.image_url)
+        //     formData.append('recipe', recipe.image_url)
         // } 
         // else {
         //     formData.append('image', recipeImage)
@@ -49,7 +49,6 @@ function EditPage() {
             type: 'EDIT_TITLE',
             payload: title
         })
-
     }
     const setEditRecipe = (recipe) => {
         dispatch({

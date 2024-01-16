@@ -22,6 +22,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Navbar from '../NavBar/NavBar';
 
 
 
@@ -42,7 +43,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Navbar />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
