@@ -33,30 +33,30 @@ router.post('/', cloudinaryUpload.single('image'), async (req, res) => {
      })
 });
 
-router.put('/edit/:id', (req, res) => {
+router.put('/edit/:id', cloudinaryUpload.single('image'), async (req, res) => {
    console.log('IN OUR PUT ROUTE---->', req.body);
-   // console.log('req.file.path, PUT ROUTE---->', req.file.path);
-   // let recipeImage;
+   console.log('req.file.path, PUT ROUTE---->', req.file.path);
+   let recipeImage;
 
-   // if(!req.file) {
-   //    recipeImage = req.body.recipeImage
-   // } else {
-   //    recipeImage = req.file.path
-   // }
-   // console.log('req.file is:', req.file);
+   if(!req.file) {
+      recipeImage = req.body.recipeImage
+   } else {
+      recipeImage = req.file.path
+   }
+   console.log('req.file is:', req.file);
    // console.log('recipeImage is:', recipeImage)
    const recipeTitle = req.body.title;
-   // const imageUrl = req.file.path;
+   const imageUrl = req.file.path;
    const userId = req.user.id
    const recipeId = req.params.id
-   const recipeDescription = req.body.description
+   const recipeDescription = req.body.recipe
 
    const sqlText = `
    UPDATE "recipes"
-      SET "user_id"= $1, "title"= $2, "description"= $3
-      WHERE "id" = $4;`;
+      SET "image_url" = $1, "user_id"= $2, "title"= $3, "description"= $4
+      WHERE "id" = $5;`;
 
-   const updateRecipeValues = [ userId, recipeTitle, recipeDescription, recipeId, ]
+   const updateRecipeValues = [imageUrl, userId, recipeTitle, recipeDescription, recipeId, ]
 
    // query to update the recipe image and recipe details
    pool.query(sqlText, updateRecipeValues)

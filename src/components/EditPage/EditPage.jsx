@@ -10,14 +10,14 @@ function EditPage() {
     const {id} = useParams();
     const user = useSelector((store) => store.user);
     const recipe = useSelector((store) => store.setDetailsReducer)
-    // const formData = new FormData();
-    // const [editTitle, setEditTitle] = useState(recipe.title);
-    // const [recipeImage, setRecipeImage] = useState('');
-    // const [editRecipe, setEditRecipe] = useState(recipe.description);
+    const formData = new FormData();
+    const [editTitle, setEditTitle] = useState(recipe.title);
+    const [recipeImage, setRecipeImage] = useState('');
+    const [editRecipe, setEditRecipe] = useState(recipe.description);
 
     useEffect(() => {
         dispatch({
-            type: "SAGA_GET_DETAILS",
+            type: "SAGA_GET_RECIPE",
             payload: id
         })
     }, [id])
@@ -26,37 +26,28 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         
-        // if(recipeImage === '') {
-        //     formData.append('recipe', recipe.image_url)
-        // } 
-        // else {
-        //     formData.append('image', recipeImage)
-        // }   
-        // formData.append('title', recipe.editTitle);
-        // formData.append('recipe', recipe.editRecipe);
+        if(recipeImage === '') {
+            formData.append('recipe', recipe.image_url)
+        } 
+        else {
+            formData.append('image', recipeImage)
+        }   
+        formData.append('title', editTitle);
+        formData.append('recipe', editRecipe);
       // dispatch for the saga and useHistory to navigate back to the user page
-        dispatch({
-            type: 'SAGA/EDIT_RECIPE',
-            payload: {
-                id,
-                data: recipe
-            }
-        })
+
+      dispatch({
+        type: 'SAGA/EDIT_RECIPE',
+        payload: {
+            id:id,
+            data: formData
+        }
+    })
+    
         history.push('/user');
 
     }
-    const setEditTitle = (title) => {
-        dispatch({
-            type: 'EDIT_TITLE',
-            payload: title
-        })
-    }
-    const setEditRecipe = (recipe) => {
-        dispatch({
-            type: 'EDIT_RECIPE',
-            payload: recipe
-        })
-    }
+    
 
     return (
        <div className="container">
@@ -65,20 +56,20 @@ function EditPage() {
             <input onChange={(event) => setEditTitle (event.target.value)}
                     name="title"
                     placeholder='Recipe Title'
-                    value={recipe.title}
+                    value={editTitle}
                     />
 
-            {/* <input onChange={(event) => setRecipeImage(event.target.files[0])}
+            <input onChange={(event) => setRecipeImage(event.target.files[0])}
                    type="file"
                    name='image'
-                   /> */}
+                   />
             <textarea onChange={(event) => setEditRecipe(event.target.value)}
                    name="recipe"
                    cols="30"
                    rows="20"
                    wrap="hard"
                    placeholder="Add Recipe"
-                   value={recipe.description}
+                   value={editRecipe}
                   />
                   <br></br>
             <button type="submit">Submit</button>
