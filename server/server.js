@@ -37,6 +37,10 @@ app.use('/api/details', detailsRouter);
 app.use('/api/recipeItem', recipeItemRouter);
 // addRecipe router to add recipe and image
 app.use('/api/addRecipe', addRecipeRouter);
+// The route to hit when a user is editing a recipe, but not an image
+app.use('/api/addRecipe/:id', addRecipeRouter);
+// The route to hit when a user is editing a recipe image
+app.use('/api/addRecipe/:id/image_edit', addRecipeRouter);
 
 
 // Serve static files

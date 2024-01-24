@@ -2,25 +2,57 @@ import { put,takeLatest } from "redux-saga/effects";
 import axios from 'axios';
 
 function* editRecipe(action) {
-    console.log('action.payload:', action.payload);
     try {
-        const headers = {
+        console.log('action.payload is:', action.payload);
+
+        // Creating some variables to hold what come in on action.payload:
+        const recipeId = action.payload.recipeId
+        const title = action.payload.data.editTitle
+        const recipe = action.payload.data.editRecipe
+        const image = action.payload.data.recipeImage
+
+        // Creating an editUrl variable that holds the correct url to hit if a user
+        // has not edited the image and also make an editData variable that
+        // contains the action.payload.data object
+
+        let editUrl = `/api/addrecipe/${recipeId}`
+        let editData = {title, recipe}
+        let editHeaders = ''
+
+      // Then, IF the FormData object includes an 'image' property,
+      // we'll set editUrl to hold the different URL. We'll also
+      // make a chunk of FormData and set editData to hold it. 
+      if (action.payload.data.image) {
+        editUrl = `/api/addRecipe/${recipeId}/image_edit`
+
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('recipe', recipe);
+        formData.append('image', image);
+
+        editData = formData
+
+        editHeaders = {
             'content-type' : 'multipart/form-data'
         }
-         const response = yield axios ({
-            method: 'PUT',
-            url:`api/addRecipe/edit/${action.payload.id}`,
-            headers: headers,
-            data: action.payload.data
-        });
-        yield put({action: "SAGA_GET_RECIPE", payload: action.payload.id});
-        yield put({action:"SAGA_GET_RECIPES", payload: action.payload });
-        console.log('Checking the SAGA/PUT :', response.data)
-    } catch (error) {
-        console.log('Error with edit SAGA', error)
-    }
+      }
+
+      // Making the request
+      const response = yield axios({
+        method: 'PUT',
+        url: editUrl,
+        headers: editHeaders,
+        data: editData
+      });
+      yield put({type:'GET_RECIPE', payload: response.data })
     
+    } catch (error) {
+        console.log('Error with edit saga', error)
+    }
 }
+    
+    
+        
 
 function* editRecipeSaga() {
     yield takeLatest('SAGA/EDIT_RECIPE', editRecipe)

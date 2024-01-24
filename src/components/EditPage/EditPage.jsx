@@ -10,7 +10,6 @@ function EditPage() {
     const {id} = useParams();
     const user = useSelector((store) => store.user);
     const recipe = useSelector((store) => store.setDetailsReducer)
-    const formData = new FormData();
     const [editTitle, setEditTitle] = useState(recipe.title);
     const [recipeImage, setRecipeImage] = useState('');
     const [editRecipe, setEditRecipe] = useState(recipe.description);
@@ -26,22 +25,28 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         
-        if(recipeImage === '') {
-            formData.append('recipe', recipe.image_url)
-        } 
-        else {
-            formData.append('image', recipeImage)
-        }   
-        formData.append('title', editTitle);
-        formData.append('recipe', editRecipe);
+        // if(recipeImage === '') {
+        //     formData.append('recipe', recipe.image)
+        // } 
+        // else {
+        //     formData.append('image', recipeImage)
+        // }   
+        // formData.append('title', editTitle);
+        // formData.append('recipe', editRecipe);
       // dispatch for the saga and useHistory to navigate back to the user page
 
       dispatch({
         type: 'SAGA/EDIT_RECIPE',
         payload: {
             id:id,
-            data: formData
+            data: {
+                editTitle,
+                editRecipe,
+                recipeImage,
+            }
         }
+        
+        
     })
     
         history.push('/user');
