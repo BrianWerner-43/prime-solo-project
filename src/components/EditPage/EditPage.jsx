@@ -25,14 +25,6 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         
-        // if(recipeImage === '') {
-        //     formData.append('recipe', recipe.image)
-        // } 
-        // else {
-        //     formData.append('image', recipeImage)
-        // }   
-        // formData.append('title', editTitle);
-        // formData.append('recipe', editRecipe);
       // dispatch for the saga and useHistory to navigate back to the user page
 
       dispatch({

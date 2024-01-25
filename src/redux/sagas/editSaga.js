@@ -6,7 +6,7 @@ function* editRecipe(action) {
         console.log('action.payload is:', action.payload);
 
         // Creating some variables to hold what come in on action.payload:
-        const recipeId = action.payload.recipeId
+        const recipeId = action.payload.id
         const title = action.payload.data.editTitle
         const recipe = action.payload.data.editRecipe
         const image = action.payload.data.recipeImage
@@ -44,8 +44,8 @@ function* editRecipe(action) {
         headers: editHeaders,
         data: editData
       });
-      yield put({type:'GET_RECIPE', payload: response.data })
-    
+      yield put({type:'GET_RECIPE', payload: response.data})
+     
     } catch (error) {
         console.log('Error with edit saga', error)
     }
