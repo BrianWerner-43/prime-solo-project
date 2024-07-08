@@ -12,7 +12,7 @@ const userRouter = require('./routes/user.router');
 const recipeRouter = require('./routes/recipe.router');
 const detailsRouter = require('./routes/details.router');
 const recipeItemRouter = require('./routes/recipeItem.router');
-const addRecipeRouter = require('./routes/addRecipe.router');
+const addRecipeRouter = require('./routes/addRecipe');
 require('dotenv').config();
 
 
@@ -38,9 +38,9 @@ app.use('/api/recipeItem', recipeItemRouter);
 // addRecipe router to add recipe and image
 app.use('/api/addRecipe', addRecipeRouter);
 // The route to hit when a user is editing a recipe, but not an image
-app.use('/api/addRecipe/:id', addRecipeRouter);
+// app.use('/api/addRecipe/:id', addRecipeRouter);
 // The route to hit when a user is editing a recipe image
-app.use('/api/addRecipe/:id/image_edit', addRecipeRouter);
+// app.use('/api/addRecipe/:id/image_edit', addRecipeRouter);
 
 
 // Serve static files

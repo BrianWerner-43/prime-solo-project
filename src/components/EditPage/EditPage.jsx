@@ -7,43 +7,45 @@ import { useHistory, useParams } from 'react-router-dom';
 function EditPage() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const {id} = useParams();
+    const params = useParams();
+    const [editTitle, setEditTitle] = useState('');
+    const [recipeImage, setRecipeImage] = useState(null);
+    const [editRecipe, setEditRecipe] = useState('');
     const user = useSelector((store) => store.user);
     const recipe = useSelector((store) => store.setDetailsReducer)
-    const [editTitle, setEditTitle] = useState(recipe.title);
-    const [recipeImage, setRecipeImage] = useState('');
-    const [editRecipe, setEditRecipe] = useState(recipe.description);
 
     useEffect(() => {
         dispatch({
             type: "SAGA_GET_RECIPE",
-            payload: id
-        })
-    }, [id])
+            payload: params.id
+        });
+    }, [params, dispatch]);
+
+    useEffect(() => {
+        if(recipe) {
+            setEditTitle(recipe.title)
+            setEditRecipe(recipe.description)
+        }
+    }, [recipe])
 
     //will have to call to the saga to get the inforation from the server
     const handleEdit = (event) => {
         event.preventDefault();
+        const recipeForm = new FormData();
+        recipeForm.append("image", recipeImage) ;
+        recipeForm.append('title', editTitle);
+        recipeForm.append('description', editRecipe);
+        recipeForm.append('id', params.id)
+
         
       // dispatch for the saga and useHistory to navigate back to the user page
-
       dispatch({
         type: 'SAGA/EDIT_RECIPE',
-        payload: {
-            id:id,
-            data: {
-                editTitle,
-                editRecipe,
-                recipeImage,
-            }
-        }
-        
-        
-    })
-    
-        history.push('/user');
+        payload: recipeForm,    
+    }) 
+     history.push('/user');
 
-    }
+    };
     
 
     return (
