@@ -4,6 +4,7 @@ import axios from 'axios';
 function* editRecipe(action) {
     try {
         console.log('action.payload is:', action.payload);
+        const headers = {'content-type' : 'multipart/form-data'}
 
         //Explicitly specify headers for FormData if needed
       const response = yield axios({

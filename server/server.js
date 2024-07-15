@@ -6,14 +6,15 @@ const app = express();
 
 const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
+require('dotenv').config();
 
 // Route includes
 const userRouter = require('./routes/user.router');
 const recipeRouter = require('./routes/recipe.router');
 const detailsRouter = require('./routes/details.router');
 const recipeItemRouter = require('./routes/recipeItem.router');
-const addRecipeRouter = require('./routes/addRecipe');
-require('dotenv').config();
+const addRecipeRouter = require('./routes/addRecipe.router');
+
 
 
 // Body parser middleware
