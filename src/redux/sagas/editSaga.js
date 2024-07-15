@@ -3,14 +3,15 @@ import axios from 'axios';
 
 function* editRecipe(action) {
     try {
-        console.log('action.payload is:', action.payload);
-        const headers = {'content-type' : 'multipart/form-data'}
+       console.log('Saga Edit action:', action)
+        // console.log('action.payload is:', action.payload);
+        const headers = {'Content-Type' : 'multipart/form-data'}
 
         //Explicitly specify headers for FormData if needed
       const response = yield axios({
         method: 'PUT',
-        url: `/api/recipe/${action.payload.get('id')}`,
-        headers: editHeaders,
+        url: `/api/addRecipe/${action.payload.get('id')}`,
+        headers: headers,
         data: action.payload
       });
      yield put({
@@ -28,38 +29,7 @@ function* editRecipe(action) {
 
 export default editRecipeSaga;
 
-        // Creating some variables to hold what come in on action.payload:
-        // const recipeId = action.payload.id
-        // const title = action.payload.data.editTitle
-        // const recipe = action.payload.data.editRecipe
-        // const image = action.payload.data.recipeImage
-
-        // Creating an editUrl variable that holds the correct url to hit if a user
-        // has not edited the image and also make an editData variable that
-        // contains the action.payload.data object
-
-        // let editUrl = `/api/addrecipe/${recipeId}`
-        // let editData = {title, recipe}
-        // let editHeaders = ''
-
-      // Then, IF the FormData object includes an 'image' property,
-      // we'll set editUrl to hold the different URL. We'll also
-      // make a chunk of FormData and set editData to hold it. 
-      // if (action.payload.data.image) {
-      //   editUrl = `/api/addRecipe/${recipeId}/image_edit`
-
-      //   const formData = new FormData();
-      //   formData.append('title', title);
-      //   formData.append('recipe', recipe);
-      //   formData.append('image', image);
-
-      //   editData = formData
-
-      //   editHeaders = {
-      //       'content-type' : 'multipart/form-data'
-      //   }
-      // }
-
+      
       
     
     

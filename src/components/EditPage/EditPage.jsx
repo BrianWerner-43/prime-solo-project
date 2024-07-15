@@ -7,7 +7,7 @@ import { useHistory, useParams } from 'react-router-dom';
 function EditPage() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const params = useParams();
+    const {id} = useParams();
     const [editTitle, setEditTitle] = useState('');
     const [recipeImage, setRecipeImage] = useState(null);
     const [editRecipe, setEditRecipe] = useState('');
@@ -17,9 +17,9 @@ function EditPage() {
     useEffect(() => {
         dispatch({
             type: "SAGA_GET_RECIPE",
-            payload: params.id
+            payload: id
         });
-    }, [params, dispatch]);
+    }, [id, dispatch]);
 
     useEffect(() => {
         if(recipe) {
@@ -31,17 +31,17 @@ function EditPage() {
     //will have to call to the saga to get the inforation from the server
     const handleEdit = (event) => {
         event.preventDefault();
-        const recipeForm = new FormData();
-        recipeForm.append("image", recipeImage) ;
-        recipeForm.append('title', editTitle);
-        recipeForm.append('description', editRecipe);
-        recipeForm.append('id', params.id)
+        const formData = new FormData();
+        formData.append("image", recipeImage) ;
+        formData.append('title', editTitle);
+        formData.append('description', editRecipe);
+        formData.append('id', id)
 
         
       // dispatch for the saga and useHistory to navigate back to the user page
       dispatch({
         type: 'SAGA/EDIT_RECIPE',
-        payload: recipeForm,    
+        payload: formData,    
     }) 
      history.push('/user');
 
