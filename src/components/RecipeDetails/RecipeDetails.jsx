@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
+// import Card from '@mui/material/Card';
+// import CardHeader from '@mui/material/CardHeader';
+// import CardMedia from '@mui/material/CardMedia';
+// import CardContent from '@mui/material/CardContent';
+// import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+
+// New MUI imports:
+import {Card, CardHeader, CardMedia, CardContent, CardActions, IconButton, Typography, Grid, Button} from '@mui/material';
+// import IconButton from '@mui/material/IconButton';
+// import Typography from '@mui/material/Typography';
 import { green } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useEffect } from 'react';
@@ -17,8 +20,17 @@ import { useParams, useHistory } from 'react-router-dom';
 import './RecipeDetails.css';
 import Swal from 'sweetalert2';
 
-
-
+// Complex Interaction card material UI function
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 // Creating a function that will display the recipe and recipe detals
 function RecipeDetails() {
@@ -27,22 +39,13 @@ function RecipeDetails() {
   const dispatch = useDispatch();
   const ID = useParams();
   const details = useSelector(store => store.setDetailsReducer);
-  
-// Complex Interaction card material UI function
-  const ExpandMore = styled((props) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-  })(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  }));
+
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  setExpanded(!expanded);
+};
+  
+
 
   // Delete function that will delete the recipe
    // As well as using a sweet alet to give the user the option to delete or not
@@ -98,68 +101,131 @@ function RecipeDetails() {
       payload: ID.id  
     })
     
-  }, [])
-  
-// The render for the Complex Interaction card from material UI
+  }, [dispatch, ID])
+
+  // New code for reformatting the recipe cards
+
   return (
-  <div className="container">
-    <div className="image-border">
-      
-     
-    <Card sx={{ maxWidth: 400 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: green[500] }} aria-label="logo">
-            cwc
-          </Avatar>
-        }
-        title={details.title}  
-      />
-       <CardMedia
-       sx={{height: 300 }}
-       image={details.image_url}  
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-        </CardActions>
+    <div className="container">
+      <div className="image-border">
+        <Card sx={{ maxWidth: 600, margin: '0 auto' }}>
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: green[500] }} aria-label="logo">
+                cwc
+              </Avatar>
+            }
+            title={details.title}
+          />
+          <CardMedia
+            component="img"
+            height="300"
+            image={details.image_url}
+          />
+          <CardContent>
+            <Typography variant="h6" component="div">Ingredients:</Typography>
+            <Grid container spacing={1}>
+              {details.ingredients && details.ingredients.split(',').map((ingredient, index) => (
+                <Grid item xs={12} key={index}>
+                  <Typography variant="body2">{ingredient}</Typography>
+                </Grid>
+              ))}
+            </Grid>
+            <Typography variant="h6" component="div" style={{ marginTop: 16 }}>Procedure:</Typography>
+            <Typography variant="body2" component="div">{details.description}</Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <ExpandMore
+              expand={expanded}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+            </ExpandMore>
+          </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-        <Typography fontFamily={"Noconsequence"} color="green" fontSize={25}paragraph>You can do this!</Typography>
-        <Typography paragraph>Recipe as fallows:</Typography>
-          <Typography fontFamily={"new times roman"}paragraph>  
-          {details.description}
-          </Typography>
-      </CardContent>
-      </Collapse>
-    </Card>
-  
-      
-      <button className="back-btn" onClick={() => history.goBack()}>👈 Go back</button>
-      <button className="add-btn" onClick={handleAddBtn}>Add Recipe</button>
-      <br></br>
-      <button className="edit-btn"  onClick={handleEditBtn}>Edit</button>
-      <button className="delete-btn" onClick={handleDelete}>Delete</button>
-      
-     </div>
+            <CardContent>
+              <Button onClick={() => history.goBack()} variant="contained" color="primary" style={{ marginRight: 8 }}>
+                👈 Go back
+              </Button>
+              <Button onClick={handleAddBtn} variant="contained" color="secondary" style={{ marginRight: 8 }}>
+                Add Recipe
+              </Button>
+              <Button onClick={handleEditBtn} variant="contained" style={{ backgroundColor: '#FFA726', marginRight: 8 }}>
+                Edit
+              </Button>
+              <Button onClick={handleDelete} variant="contained" color="error">
+                Delete
+              </Button>
+            </CardContent>
+          </Collapse>
+        </Card>
+      </div>
     </div>
-    
   );
 }
+export default RecipeDetails;
+  
+// The render for the Complex Interaction card from material UI
+  // return (
+  // <div className="container">
+  //   <div className="image-border">
+      
+     
+  //   <Card sx={{ maxWidth: 400 }}>
+  //     <CardHeader
+  //       avatar={
+  //         <Avatar sx={{ bgcolor: green[500] }} aria-label="logo">
+  //           cwc
+  //         </Avatar>
+  //       }
+  //       title={details.title}  
+  //     />
+  //      <CardMedia
+  //      sx={{height: 300 }}
+  //      image={details.image_url}  
+  //     />
+  //     <CardContent>
+  //       <Typography variant="body2" color="text.secondary">
+          
+  //       </Typography>
+  //     </CardContent>
+  //     <CardActions disableSpacing>
+  //       <ExpandMore
+  //         expand={expanded}
+  //         onClick={handleExpandClick}
+  //         aria-expanded={expanded}
+  //         aria-label="show more"
+  //       >
+  //         <ExpandMoreIcon />
+  //       </ExpandMore>
+  //       </CardActions>
+  //         <Collapse in={expanded} timeout="auto" unmountOnExit>
+  //       <CardContent>
+  //       <Typography fontFamily={"Noconsequence"} color="green" fontSize={25}paragraph>You can do this!</Typography>
+  //       <Typography paragraph>Recipe as fallows:</Typography>
+  //         <Typography fontFamily={"new times roman"}paragraph>  
+  //         {details.description}
+  //         </Typography>
+  //     </CardContent>
+  //     </Collapse>
+  //   </Card>
+  
+      
+  //     <button className="back-btn" onClick={() => history.goBack()}>👈 Go back</button>
+  //     <button className="add-btn" onClick={handleAddBtn}>Add Recipe</button>
+  //     <br></br>
+  //     <button className="edit-btn"  onClick={handleEditBtn}>Edit</button>
+  //     <button className="delete-btn" onClick={handleDelete}>Delete</button>
+      
+  //    </div>
+  //   </div>
+    
+  // );
+// }
     
   
   
 
 
-export default RecipeDetails;

@@ -15,8 +15,7 @@ function* editRecipe(action) {
         data: action.payload
       });
      yield put({
-      type: 'SAGA_GET_RECIPE',
-      // payload: response.data
+      type: 'SAGA_GET_RECIPE'
      })
   } catch(error) {
     console.log('error with the editRecipe saga:', error)
