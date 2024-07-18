@@ -5,9 +5,9 @@ function* addrecipe(action) {
     try {
       console.log('action.payload:', action.payload);
       const headers = {
-            'content-type': 'multipart/form-data'
+            'Content-type': 'multipart/form-data'
         }
-      yield axios({
+       const response = yield axios({
         method: 'POST',
         url: '/api/addRecipe',
         headers: headers,

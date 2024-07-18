@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-// import Card from '@mui/material/Card';
-// import CardHeader from '@mui/material/CardHeader';
-// import CardMedia from '@mui/material/CardMedia';
-// import CardContent from '@mui/material/CardContent';
-// import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 
 // New MUI imports:
-import {Card, CardHeader, CardMedia, CardContent, CardActions, IconButton, Typography, Grid, Button} from '@mui/material';
-// import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
+import {Card, 
+       CardHeader,
+       CardMedia,
+       CardContent,
+       CardActions,
+       IconButton,
+       Typography,
+       Grid,
+       Button} from '@mui/material';
 import { green } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useEffect } from 'react';
@@ -123,16 +124,18 @@ function RecipeDetails() {
             image={details.image_url}
           />
           <CardContent>
-            <Typography variant="h6" component="div">Ingredients:</Typography>
+            <Typography variant='h6' component="div">Description: {details.description}</Typography>
+            
+            <Typography variant="h6" component="div" style={{marginTop: 16}}>Ingredients:</Typography>
             <Grid container spacing={1}>
-              {details.ingredients && details.ingredients.split(',').map((ingredient, index) => (
+              {details.ingredients && details.ingredients.split('/n').map((ingredient, index) => (
                 <Grid item xs={12} key={index}>
-                  <Typography variant="body2">{ingredient}</Typography>
+                  <Typography variant="body2" style={{whiteSpace: 'pre-line'}}>{ingredient}</Typography>
                 </Grid>
               ))}
             </Grid>
-            <Typography variant="h6" component="div" style={{ marginTop: 16 }}>Procedure:</Typography>
-            <Typography variant="body2" component="div">{details.description}</Typography>
+            <Typography variant="h6" component="div" style={{ marginTop: 16 }}>Procedure: </Typography>
+            <Typography variant="body2" component="div" style={{whiteSpace: 'pre-line', marginTop: 8}}>{details.procedure}</Typography>
           </CardContent>
           <CardActions disableSpacing>
             <ExpandMore

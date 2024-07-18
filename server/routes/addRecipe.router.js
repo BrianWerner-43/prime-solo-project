@@ -9,7 +9,8 @@ router.post('/', cloudinaryUpload.single('image'), async(req, res) => {
       console.log('req.body------>', req.body);
       console.log('req.file.path------>', req.file.path);
 
-      const {title: recipeTitle, description: recipeDescription, ingredients, procedure} = req.body
+      const {title, description, ingredients, procedure} = req.body;
+      // const {title: recipeTitle, description: recipeDescription, ingredients, procedure} = req.body
       const imageUrl = req.file.path;
       const userId = req.user.id;
 
@@ -18,7 +19,9 @@ router.post('/', cloudinaryUpload.single('image'), async(req, res) => {
         VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING "id";`;
 
-        const insertRecipeValues = [imageUrl, userId, recipeTitle, recipeDescription, ingredients, procedure]
+        const insertRecipeValues = [imageUrl, userId, title, description || '', ingredients || '', procedure || '']
+
+      //   const insertRecipeValues = [imageUrl, userId, recipeTitle, recipeDescription, ingredients, procedure]
         const result = await pool.query(sqlText, insertRecipeValues);
         console.log('POST result', result);
         res.sendStatus(201);
@@ -42,15 +45,15 @@ router.put('/:id', cloudinaryUpload.single('image'), async(req, res) => {
 
       const {id} = req.params;
       const {
-         title = '', 
-         description ='', 
-         ingredients = '', 
-         procedure =''} = req.body;
+         title , 
+         description, 
+         ingredients, 
+         procedure} = req.body;
 
       const userId = req.user.id;
 
       // Check that fields are required 
-      
+
 
       const updateRecipeQuery = `
       UPDATE "recipes"

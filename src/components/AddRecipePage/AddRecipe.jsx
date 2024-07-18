@@ -14,7 +14,9 @@ function AddRecipe() {
   const formData = new FormData();
   const [title, setTitle] = useState('');
   const [image_url, setImage_url] = useState([]);
-  const [recipe, setRecipe] = useState('');
+  const [description, setDescription] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const [procedure, setProcedure] = useState('');
   
     
 
@@ -23,7 +25,10 @@ function AddRecipe() {
     event.preventDefault();
     formData.append('image', image_url[0]);
     formData.append('title', title);
-    formData.append('recipe', recipe);
+    formData.append('description', description);
+    formData.append('ingredients', ingredients);
+    formData.append('procedure', procedure);
+   
 
     
     dispatch({
@@ -45,8 +50,8 @@ function AddRecipe() {
     <form onSubmit={handleSubmit}>
       <input onChange={(event) => setTitle(event.target.value)}
             name="title"
-             placeholder="Recipe Title"
-             value={title}
+            placeholder="Recipe Title"
+            value={title}
              
              />
              <br></br>
@@ -56,15 +61,30 @@ function AddRecipe() {
              
              />
              <br></br>
-      <textarea onChange={(event) => setRecipe(event.target.value)}
-            name="recipe"
-            cols="30"
-            rows="20"
-            wrap="hard"
-            placeholder="Add Recipe"
-            value={recipe}
+      <input onChange={(event) => setDescription(event.target.value)}
+             name="description"
+             placeholder='Description'
+             value={description}
              />
              <br></br>
+
+      <textarea onChange={(event) => setIngredients(event.target.value)}
+            name="recipe"
+            cols="30"
+            rows="10"
+            wrap="hard"
+            placeholder="Ingredients"
+            value={ingredients}
+             />
+             <br></br>
+      <textarea onChange={(event) => setProcedure(event.target.value)}
+            name="procedure"
+            cols="30"
+            rows="10"
+            placeholder='Procedure'
+            value={procedure}
+            />
+        
       <button type="submit">Submit</button>
     </form>
     </div>
