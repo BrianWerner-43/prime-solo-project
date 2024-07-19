@@ -128,7 +128,7 @@ function RecipeDetails() {
             
             <Typography variant="h6" component="div" style={{marginTop: 16}}>Ingredients:</Typography>
             <Grid container spacing={1}>
-              {details.ingredients && details.ingredients.split('/n').map((ingredient, index) => (
+              {details.ingredients && details.ingredients.split(',').map((ingredient, index) => (
                 <Grid item xs={12} key={index}>
                   <Typography variant="body2" style={{whiteSpace: 'pre-line'}}>{ingredient}</Typography>
                 </Grid>

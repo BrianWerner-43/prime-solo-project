@@ -6,6 +6,7 @@
   margin: 0 0 30px;
   background-color: #045d0c;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .nav a {

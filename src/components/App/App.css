@@ -72,6 +72,8 @@ Container
   font-weight: bold;
   font-size: large;
   color: antiquewhite;
+  margin-left: 32%;
+  margin-top: 40px;
 }
 .about-me {
   color: antiquewhite;
@@ -206,13 +208,14 @@ Form Treatment
   width: 400px;
   max-width: 100%;
   padding: 25px;
+  padding-bottom: 10px;
   margin: 0 auto 20px;
   color: rgb(254, 145, 3);
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
   background-image: url('/public/images/my_dream_kitchen.jpeg');
   background-size: cover;
-  margin: 0;
+ 
 }
 
 input {
