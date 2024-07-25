@@ -126,11 +126,11 @@ function RecipeDetails() {
           <CardContent>
             <Typography variant='h6' component="div">Description: {details.description}</Typography>
             
-            <Typography variant="h6" component="div" style={{marginTop: 16}}>Ingredients:</Typography>
+            <Typography variant="h6" component="div" style={{marginTop: 16, fontFamily: '"Noconsequence"'}}>Ingredients:</Typography>
             <Grid container spacing={1}>
               {details.ingredients && details.ingredients.split(',').map((ingredient, index) => (
                 <Grid item xs={12} key={index}>
-                  <Typography variant="body2" style={{whiteSpace: 'pre-line'}}>{ingredient}</Typography>
+                  <Typography variant="body2" style={{whiteSpace: 'pre-line' }}>{ingredient}</Typography>
                 </Grid>
               ))}
             </Grid>

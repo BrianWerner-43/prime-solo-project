@@ -1,0 +1,40 @@
+
+.recipe-title {
+    font-family: "Noconsequence";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.url-input {
+    font-family: "Noconsequence";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 270px;
+}
+
+.description-input {
+    font-family: "Noconsequence";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ingredient-input {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Noconsequence";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.procedure-input {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Noconsequence";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.submit-btn {
+    margin: 10px;
+    background-color: rgb(107, 204, 237);
+    border-radius: 5px;
+    font-family: "Noconsequence";
+    color: rgb(235, 94, 94);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
