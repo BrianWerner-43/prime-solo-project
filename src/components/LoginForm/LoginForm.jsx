@@ -39,7 +39,7 @@ function LoginForm() {
         
   //     }
   //   })
-   
+  
     
   // }
  
@@ -82,7 +82,7 @@ function LoginForm() {
         </center>
       </div>
       <div>
-        {/* <button className='btn' type="button" onClick={handleGuest}>Continue as Guest</button> */}
+        {/* <button  className='btn' type="button" onClick={handleGuest}>Continue as Guest </button> */}
       </div>
     </form>
   );

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(4, 79, 75);
+    background-color: rgb(10, 197, 188);
     
 }
 
@@ -7,7 +7,11 @@ body {
 .image-border {
     border: 2px solid black;
     width: fit-content;
+    border-radius: 5px;
+    margin-left: 90px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
+
 
 .inspire-tag {
   font-family: "Noconsequence";

@@ -56,6 +56,7 @@ Styling for redipe cards
 .card-container {
   flex-wrap: wrap;
   display: flex;
+ justify-content: center;
 }
 
 
@@ -72,9 +73,13 @@ Container
   font-weight: bold;
   font-size: large;
   color: antiquewhite;
-  margin-left: 32%;
+  /* margin-left: 30%; */
+  margin-left: 500px;
   margin-top: 40px;
- 
+  padding-left: -4px;
+  text-align: center;
+  box-shadow: 0.2rem 0.2rem rgb(2, 117, 96), -0.2rem -0.2rem #12444d;
+  max-width: 800px;
 }
 .about-me {
   color: antiquewhite;
@@ -82,9 +87,7 @@ Container
   text-align: center;
 }
 .profile-img {
-  float: left;
-  width: 45%;
-  height: 40p;
+  height: 400px;
   animation: fadeIn 5s;
 }
 @keyframes fadeIn {
@@ -92,7 +95,7 @@ Container
  100% {opacity: 1;}
 }
 .about-ptag {
-  color: rgb(23, 218, 23);
+  color: rgb(136, 7, 7);
   font-family:'Times New Roman', Times, serif;
   animation: fadeIn 5s;
 }
@@ -172,10 +175,11 @@ Button
   padding: 0;
   border-width: 0;
   border-radius: 10px;
-  border: 2px solid rgb(10, 180, 186);
+  border: 2px solid rgb(8 33 33);
   background: none;
   font: inherit;
-  color: #b91f1f;
+  color: #0d4db6;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);;
 }
 
 .btn_asLink:hover {
@@ -224,6 +228,7 @@ input {
   margin-bottom: 10px;
   border: 2px solid black;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 /* --------------------------------------------------------------------------------

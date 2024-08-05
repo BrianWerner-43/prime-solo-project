@@ -112,11 +112,11 @@ function RecipeDetails() {
         <Card sx={{ maxWidth: 600, margin: '0 auto' }}>
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: green[500] }} aria-label="logo">
+              <Avatar sx={{ bgcolor: green[600] }} aria-label="logo">
                 cwc
               </Avatar>
             }
-            title={details.title}
+             title={details.title} 
           />
           <CardMedia
             component="img"
@@ -124,18 +124,18 @@ function RecipeDetails() {
             image={details.image_url}
           />
           <CardContent>
-            <Typography variant='h6' component="div">Description: {details.description}</Typography>
+            <Typography variant='h6' component="div" style={{fontFamily: '"Noconsequence"', color: 'seagreen'}}>Description: {details.description}</Typography>
             
             <Typography variant="h6" component="div" style={{marginTop: 16, fontFamily: '"Noconsequence"'}}>Ingredients:</Typography>
             <Grid container spacing={1}>
               {details.ingredients && details.ingredients.split(',').map((ingredient, index) => (
                 <Grid item xs={12} key={index}>
-                  <Typography variant="body2" style={{whiteSpace: 'pre-line' }}>{ingredient}</Typography>
+                  <Typography variant="body2" style={{whiteSpace: 'pre-line', fontFamily: 'fantasy'}}>{ingredient}</Typography>
                 </Grid>
               ))}
             </Grid>
-            <Typography variant="h6" component="div" style={{ marginTop: 16 }}>Procedure: </Typography>
-            <Typography variant="body2" component="div" style={{whiteSpace: 'pre-line', marginTop: 8}}>{details.procedure}</Typography>
+            <Typography variant="h6" component="div" style={{ marginTop: 16, fontFamily: '"Noconsequence"' }}>Procedure: </Typography>
+            <Typography variant="body2" component="div" style={{whiteSpace: 'pre-line', marginTop: 8, fontFamily: 'fantasy'}}>{details.procedure}</Typography>
           </CardContent>
           <CardActions disableSpacing>
             <ExpandMore
@@ -170,64 +170,7 @@ function RecipeDetails() {
 }
 export default RecipeDetails;
   
-// The render for the Complex Interaction card from material UI
-  // return (
-  // <div className="container">
-  //   <div className="image-border">
-      
-     
-  //   <Card sx={{ maxWidth: 400 }}>
-  //     <CardHeader
-  //       avatar={
-  //         <Avatar sx={{ bgcolor: green[500] }} aria-label="logo">
-  //           cwc
-  //         </Avatar>
-  //       }
-  //       title={details.title}  
-  //     />
-  //      <CardMedia
-  //      sx={{height: 300 }}
-  //      image={details.image_url}  
-  //     />
-  //     <CardContent>
-  //       <Typography variant="body2" color="text.secondary">
-          
-  //       </Typography>
-  //     </CardContent>
-  //     <CardActions disableSpacing>
-  //       <ExpandMore
-  //         expand={expanded}
-  //         onClick={handleExpandClick}
-  //         aria-expanded={expanded}
-  //         aria-label="show more"
-  //       >
-  //         <ExpandMoreIcon />
-  //       </ExpandMore>
-  //       </CardActions>
-  //         <Collapse in={expanded} timeout="auto" unmountOnExit>
-  //       <CardContent>
-  //       <Typography fontFamily={"Noconsequence"} color="green" fontSize={25}paragraph>You can do this!</Typography>
-  //       <Typography paragraph>Recipe as fallows:</Typography>
-  //         <Typography fontFamily={"new times roman"}paragraph>  
-  //         {details.description}
-  //         </Typography>
-  //     </CardContent>
-  //     </Collapse>
-  //   </Card>
-  
-      
-  //     <button className="back-btn" onClick={() => history.goBack()}>👈 Go back</button>
-  //     <button className="add-btn" onClick={handleAddBtn}>Add Recipe</button>
-  //     <br></br>
-  //     <button className="edit-btn"  onClick={handleEditBtn}>Edit</button>
-  //     <button className="delete-btn" onClick={handleDelete}>Delete</button>
-      
-  //    </div>
-  //   </div>
-    
-  // );
-// }
-    
+
   
   
 
