@@ -110,14 +110,17 @@ function RecipeDetails() {
     <div className="container">
       <div className="image-border">
         <Card sx={{ maxWidth: 600, margin: '0 auto' }}>
-          <CardHeader
+          <CardHeader 
             avatar={
               <Avatar sx={{ bgcolor: green[600] }} aria-label="logo">
                 cwc
               </Avatar>
             }
-             title={details.title} 
+              
           />
+          <Typography  variant='h6' component="div" style={{marginBottom: "20px",fontFamily: '"Noconsequence"', color: 'seagreen'}}>
+             {details.title}
+            </Typography>
           <CardMedia
             component="img"
             height="300"
