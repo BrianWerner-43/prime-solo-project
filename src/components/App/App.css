@@ -20,11 +20,11 @@
 
 html,
 body,
-#react-root {
+/* #react-root {
   height: 100%;
   font-family: "Noconsequence";
   color: antiquewhite;
-}
+} */
 
 body {
   /* font-family: "chlorinar"; */
@@ -67,20 +67,7 @@ Styling for redipe cards
 Container
 -------------------------------------------------------------------------------- */
 
-.container {
-  padding: 20px;
-  font-family: "Noconsequence";
-  font-weight: bold;
-  font-size: large;
-  color: antiquewhite;
-  /* margin-left: 30%; */
-  margin-left: 500px;
-  margin-top: 40px;
-  padding-left: -4px;
-  text-align: center;
-  box-shadow: 0.2rem 0.2rem rgb(2, 117, 96), -0.2rem -0.2rem #12444d;
-  max-width: 800px;
-}
+
 .about-me {
   color: antiquewhite;
   font-family:"Noconsequence";
