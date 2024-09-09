@@ -13,7 +13,7 @@
   text-decoration: none;
 }
 
-.nav-title {
+/* .nav-title {
   font-size: 24px; 
   height: 100px;
   font-weight: 700; 
@@ -22,7 +22,7 @@
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   
-}
+} */
 
 .navLink {
   display: inline-block;

@@ -50,7 +50,7 @@ function AddRecipe() {
             name="title"
             placeholder="Recipe Title"
             value={title}
-             
+            // type='text'
              />
              <br></br>
 

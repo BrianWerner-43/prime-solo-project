@@ -32,11 +32,11 @@ body {
   flex-flow: row;
 }
 
-img {
+/* img {
   display: inline-block;
   flex-direction: row-reverse;
   max-width: 100%;
-}
+} */
 
 
 /*-------------------------------------------------------------
@@ -108,12 +108,14 @@ Container
 
 .login-header {
   color:antiquewhite;
+  
   /* color: rgb(31, 10, 124); */
   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
 .info-page {
-  color:antiquewhite;
+  color:rgb(243, 168, 70);
+  font-family:"Noconsequence";
 }
 
 
@@ -203,6 +205,7 @@ Form Treatment
   padding-bottom: 10px;
   margin: 0 auto 20px;
   color: rgb(254, 145, 3);
+  border: 2px solid rgb(175, 245, 147);
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
   background-image: url('/public/images/my_dream_kitchen.jpeg');
@@ -216,6 +219,7 @@ input {
   border: 2px solid black;
   border-radius: 10px;
   cursor: pointer;
+ 
 }
 
 /* --------------------------------------------------------------------------------
@@ -226,12 +230,13 @@ Navbar
   height: 80px;
   width: 100%;
   display: flex;
+  position:sticky;
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem;
   background-color:#045d0c;
   color: antiquewhite;
-  box-shadow: 0 2px 2px 2px #A7CDCC;
+  box-shadow: 0 2px 2px 2px rgb(235, 229, 229);
 }
 .brand-name {
   text-decoration: none;

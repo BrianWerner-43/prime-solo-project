@@ -48,6 +48,7 @@ function App() {
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
 
+
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
             // shows AboutPage at all times (logged in or not)
@@ -105,7 +106,7 @@ function App() {
             }
           </Route>
 
-          <Route
+          {/* <Route
             exact
             path="/home"
           >
@@ -117,23 +118,29 @@ function App() {
               // Otherwise, show the Landing page
               <LandingPage />
             }
+          </Route> */}
+
+          <Route exact path='/landing'>
+            <LandingPage />
           </Route>
+          
           <Route
             exact
             path="/details/:id">
+             <RecipeDetails />
+          </Route>
 
-            <RecipeDetails />
-            </Route>
-            <Route
+          <Route
             exact
             path="/addRecipe">
               <AddRecipe />
-            </Route>
-            <Route
+          </Route>
+
+          <Route
             exact
             path="/edit/:id">
               <EditPage />
-            </Route>
+          </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

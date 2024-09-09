@@ -24,9 +24,13 @@ function Navbar() {
         setIsNavExpanded(false)
         history.push('/about')
     }
+    const toLanding = () => {
+      setIsNavExpanded(false)
+      history.push(`/landing`)
+    }
     return (
         <nav className="navigation">
-            <img className="nav-title" src="/images/chef_dude-1.jpeg" onClick={(toHome)} />
+          
         {user.id ? 
             <>
           <button
@@ -55,6 +59,9 @@ function Navbar() {
             }>
             <center>
             <ul>
+            <li className="nav" onClick={toLanding}>
+                Login/Register Page
+              </li>
               <li className="nav" onClick={toHome}>
                 Home
               </li>

@@ -9,7 +9,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="footer">
-      <footer>&copy;Brian Werner 
+      <footer>&copy; Brian Werner 
         <br />
         A Plop and Slurp Production
       </footer>

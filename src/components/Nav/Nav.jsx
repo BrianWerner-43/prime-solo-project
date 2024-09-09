@@ -11,16 +11,23 @@ function Nav() {
 
   return (
     <div className="nav">
-      <Link to="/home">
-        <img className="nav-title" src="/images/chef_dude.jpeg" />
-      </Link>
+      {/* <Link to="/home"> */}
+        {/* <img className="nav-title" src="/images/chef_dude.jpeg" /> */}
+      {/* </Link> */}
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
+          <>
+            {/* // If there's no user, show login/registration links */}
+            <Link className="navLink" to="/login">
+              Login / Register
+            </Link>
+            {/* // This is a link to go back to the landing page */}
+              <Link className="navLink" to="/home">
+                Landing Page
+              </Link>
+            </>
         )}
 
         {/* If a user is logged in, show these links */}
@@ -29,8 +36,6 @@ function Nav() {
             <Link className="navLink" to="/user">
               Home
             </Link>
-
-            
 
             <Link className="navLink" to="/addRecipe">
               Add recipe
