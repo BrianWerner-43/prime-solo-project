@@ -14,6 +14,7 @@ const recipeRouter = require('./routes/recipe.router');
 const detailsRouter = require('./routes/details.router');
 const recipeItemRouter = require('./routes/recipeItem.router');
 const addRecipeRouter = require('./routes/addRecipe.router');
+const searchRecipeRouter = require('./routes/searchRecipe.router');
 
 
 
@@ -38,6 +39,8 @@ app.use('/api/details', detailsRouter);
 app.use('/api/recipeItem', recipeItemRouter);
 // addRecipe router to add recipe and image
 app.use('/api/addRecipe', addRecipeRouter);
+// spoonacular api key for searching recipes
+app.use('/api/searchRecipe', searchRecipeRouter);
 
 
 // Serve static files

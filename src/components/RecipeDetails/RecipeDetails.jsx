@@ -71,7 +71,7 @@ function RecipeDetails() {
             type: 'DELETE_RECIPE',
             payload: details.id
           });
-          history.push("/");
+          history.push("/user");
           
         });
       }
