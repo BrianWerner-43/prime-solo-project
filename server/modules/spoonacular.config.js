@@ -1,6 +1,6 @@
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 
-module.exports = {
-    spoonacularApiKey: process.env.SPOONACULAR_API_KEY
-}
+// module.exports = {
+//     spoonacularApiKey: process.env.SPOONACULAR_API_KEY
+// }

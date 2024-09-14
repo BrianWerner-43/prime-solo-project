@@ -40,7 +40,7 @@ app.use('/api/recipeItem', recipeItemRouter);
 // addRecipe router to add recipe and image
 app.use('/api/addRecipe', addRecipeRouter);
 // spoonacular api key for searching recipes
-app.use('/api/searchRecipe', searchRecipeRouter);
+// app.use('/api/searchRecipe', searchRecipeRouter);
 
 
 // Serve static files

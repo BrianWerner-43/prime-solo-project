@@ -7,8 +7,8 @@ function* setUserPage(action) {
         const results = yield axios.get(`/api/details/${action.payload}`)
         yield put({type: "SET_RECIPES", payload: results.data})
 
-    }catch {
-        console.log('Error with recipes in GET/saga')
+    }catch (error) {
+        console.log('Error fetching user recipes', error)
     }
 }
 

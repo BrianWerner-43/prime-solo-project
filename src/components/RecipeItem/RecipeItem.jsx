@@ -1,95 +1,52 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import Card from '@mui/material/Card';
 
-// import './Navbar.css';
-function Navbar() {
-    const [isNavExpanded, setIsNavExpanded] = useState(false)
-    const user = useSelector((store) => store.user);
-    const history = useHistory();
-    const toHome = () => {
-      setIsNavExpanded(false)
-      history.push(`/user`)
-    }
-    const toInfo = () => {
-      setIsNavExpanded(false)
-      history.push(`/info`)
-    }
-    const addRecipe = () => {
-      setIsNavExpanded(false)
-      history.push(`/addRecipe`)
-    }
-    const toAbout = () => {
-        setIsNavExpanded(false)
-        history.push('/about')
-    }
-    const toLanding = () => {
-      setIsNavExpanded(false)
-      history.push(`/landing`)
-    }
-    return (
-        <nav className="navigation">
-          
-        {user.id ? 
-            <>
-          <button
-            className="hamburger"
-            onClick={() => {
-            setIsNavExpanded(!isNavExpanded);
-            }}
-          >
-            {/* icon from heroicons.com */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="white"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-          <div
-            className={
-                isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-            }>
-            <center>
-            <ul>
-            <li className="nav" onClick={toLanding}>
-                Login/Register Page
-              </li>
-              <li className="nav" onClick={toHome}>
-                Home
-              </li>
-              <li className="nav" onClick={addRecipe}>
-                Add Recipe
-              </li>
-              <li className="nav" onClick={toInfo}>
-                Info Page
-              </li>
-              <li className="nav" onClick={toAbout}>
-                 About
-            </li>
-                <LogOutButton className="navLink" />
-            </ul>
-            </center>
-          </div>
-          
-          </>
-          :
-          <li className="nav" onClick={toAbout}>
-            About
-            </li>
-           }
-        </nav>
-      )
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Unstable_Grid2';
+
+
+function RecipeItem({recipe}) {
+ const dispatch = useDispatch();
+ const history = useHistory();
+
+ const handleClick = () => {
+  dispatch({
+    type: 'SAGA_GET_RECIPES',
+    payload: recipe.id
+
+  })
+
+  history.push(`/details/${recipe.id}`)
+ }
+
+ return (
+  <Grid className="card-border">
+        <Card sx={{ minWidth: 250, maxWidth: 250, minHeight: 250, maxHeigh: 250 }}>
+          <CardMedia
+            sx={{ height: 400 }}
+            image={recipe.image_url}
+            title={recipe.title}
+            description={recipe.description}
+            ingredients={recipe.ingredients}
+            procedure={recipe.procedure}
+            onClick={handleClick}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {recipe.title}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+ )
 }
-export default Navbar;
-
+export default RecipeItem;
+    
 
 
 

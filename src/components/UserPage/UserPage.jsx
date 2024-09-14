@@ -18,7 +18,7 @@ function UserPage() {
   useEffect(() => {
     dispatch({type: 'SAGA_GET_RECIPE'});
     console.log('Recipes:', recipes);
-  }, []);
+  }, [dispatch]);
 
   
 
