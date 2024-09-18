@@ -28,8 +28,8 @@ function UserPage() {
       <h3>Here are your Recipes!</h3>
      
       <div className="card-container">
-        {/* map over recipes to dispaly */} 
         
+        {/* map over recipes to dispaly */}  
         {recipes.map((recipe, i) => (    
           
         //  Implement RecipeItem here

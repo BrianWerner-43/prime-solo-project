@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import deleteSaga from './deleteSaga';
 import getRecipeSaga from './getRecipe.saga';
+import searchRecipe from './searchRecipe.saga';
 import setRecipesSaga from './setRecipes.saga';
 import detailsSaga from './detailsSaga.saga'
 import addRecipeSaga from './addRecipe.saga';
@@ -22,6 +23,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     getRecipeSaga(),
+    searchRecipe(),
     setRecipesSaga(),
     detailsSaga(),
     deleteSaga(),

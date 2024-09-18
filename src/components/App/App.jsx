@@ -15,6 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import AddRecipe from '../AddRecipePage/AddRecipe';
+import SearchRecipe from '../SearchRecipePage/SearchRecipe';
 import EditPage from '../EditPage/EditPage';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import UserPage from '../UserPage/UserPage';
@@ -106,7 +107,7 @@ function App() {
             }
           </Route>
 
-          {/* <Route
+          <Route
             exact
             path="/home"
           >
@@ -118,7 +119,7 @@ function App() {
               // Otherwise, show the Landing page
               <LandingPage />
             }
-          </Route> */}
+          </Route>
 
           <Route exact path='/landing'>
             <LandingPage />
@@ -134,6 +135,12 @@ function App() {
             exact
             path="/addRecipe">
               <AddRecipe />
+          </Route>
+
+          <Route
+            exact
+            path="/searchRecipe">
+              <SearchRecipe />
           </Route>
 
           <Route

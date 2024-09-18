@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import recipe from './recipe.reducer';
+import searchRecipe from './searchRecipe.reducer';
 import setRecipes from './setRecipes.reducer';
 import setDetailsReducer from './details.reducer';
 import addRecipe from './addRecipe.reducer';
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
   recipe, // contains the user recipes
+  searchRecipe, // This is for the search recipes from Spoonacular API
   setRecipes, // contains the recipes for the recipe item
   setDetailsReducer, // contains the recipe details
   addRecipe, // contains the added recipes

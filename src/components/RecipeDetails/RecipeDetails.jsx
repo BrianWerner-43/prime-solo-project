@@ -34,7 +34,7 @@ const ExpandMore = styled((props) => {
 }));
 
 // Creating a function that will display the recipe and recipe detals
-function RecipeDetails() {
+function RecipeDetails () {
   
   const history = useHistory();
   const dispatch = useDispatch();

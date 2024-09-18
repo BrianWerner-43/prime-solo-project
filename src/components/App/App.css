@@ -54,9 +54,10 @@ Styling for redipe cards
   height: 60px;
 }
 .card-container {
-  flex-wrap: wrap;
-  display: flex;
+ flex-wrap: wrap;
+ display: flex;
  justify-content: center;
+ 
 }
 
 
@@ -171,7 +172,7 @@ Button
   background: none;
   font: inherit;
   color:rgb(243, 168, 70);
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .btn_asLink:hover {
