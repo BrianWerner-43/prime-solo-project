@@ -27,8 +27,10 @@ function SearchRecipe () {
             {searchResults.map((recipe) => (
                 <div key={recipe.id}>
                     <h3>{recipe.title}</h3>
+                    <a href={recipe.sourceUrl}> 
                     <img src={recipe.fullImagePath} alt={recipe.title} />
-                    <p>{recipe.summary}</p>
+                     </a>
+                    {/* <p>{recipe.summary}</p> */}
                 </div>
             ))}
         </div>  

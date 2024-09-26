@@ -15,13 +15,17 @@ router.get('/', async (req, res) => {
             params: {
                 query: query,
                 apiKey: spoonacularApiKey,
-                addRecipeInformation: true
+                addRecipeInformation: true,
                 
             }
             
             
         });
         res.json(response.data)
+
+        // Returning the whole data structure 👇
+        //  {results, offset, number, totalResults}
+
         console.log('response.data is ------>', response.data)
     } catch (error) {
         console.error('Error fetching the recipes from Spoonacular API', error)

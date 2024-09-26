@@ -8,11 +8,14 @@ function* fetchRecipe(action) {
             'Content-Type': 'application/json'
         }
         const response = yield call(axios.get, `/api/searchRecipe?q=${action.payload}`);
-       
+        console.log('API Response:', response.data)
 
-        yield put({ type: 'SET_SEARCH_RESULTS', payload: response.data});
+        const resultsPayload = response.data.results || [];
+        console.log('Extracted Results payload:', resultsPayload)
+
+        yield put({ type: 'SET_SEARCH_RESULTS', payload:{results: resultsPayload}});
     }catch (error) {
-        console.log('Error fetchin recipes from spoonacular API', error)
+        console.log('Error fetching recipes from spoonacular API', error)
     }
 
 }
