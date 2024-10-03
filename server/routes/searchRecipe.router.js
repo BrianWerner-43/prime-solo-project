@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     const query = req.query.q;
+    const number = req.query.number || 50;
+    const offset = req.query.offset || 0;
 
     if (!query) {
         return res.status(400).send('Query parameter "q" is required')
@@ -14,18 +16,15 @@ router.get('/', async (req, res) => {
         const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', {
             params: {
                 query: query,
+                number: number,
+                offset: offset,
                 apiKey: spoonacularApiKey,
                 addRecipeInformation: true,
-                
-            }
-            
-            
+               
+               
+            }   
         });
-        res.json(response.data)
-
-        // Returning the whole data structure 👇
-        //  {results, offset, number, totalResults}
-
+        res.json(response.data)     
         console.log('response.data is ------>', response.data)
     } catch (error) {
         console.error('Error fetching the recipes from Spoonacular API', error)

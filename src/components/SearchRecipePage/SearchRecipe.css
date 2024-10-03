@@ -1,0 +1,38 @@
+.wrapper{
+    text-align: center;
+}
+
+.recipeCards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 30px;
+   
+    /* border: 2px solid black; */
+}
+
+.recipeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 200px;
+}
+
+.recipeTitle {
+    font-family: "Noconsequence";
+    color: rgb(48, 48, 48);
+    margin: 20px;
+    padding: 20px;
+    gap: 16px;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+

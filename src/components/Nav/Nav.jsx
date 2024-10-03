@@ -41,6 +41,10 @@ function Nav() {
               Add recipe
             </Link>
 
+            <Link className="navLink" to="/searchRecipe">
+              Search 
+            </Link>
+
             <Link className="navLink" to="/info">
               Info Page
             </Link>
