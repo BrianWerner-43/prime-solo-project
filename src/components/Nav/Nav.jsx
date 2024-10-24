@@ -23,10 +23,6 @@ function Nav() {
             <Link className="navLink" to="/login">
               Login / Register
             </Link>
-            {/* // This is a link to go back to the landing page */}
-              <Link className="navLink" to="/home">
-                Landing Page
-              </Link>
             </>
         )}
 

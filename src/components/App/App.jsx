@@ -83,6 +83,7 @@ function App() {
             exact
             path="/login"
           >
+            
             {user.id ?
               // If the user is already logged in, 
               // redirect to the /user page
@@ -109,7 +110,7 @@ function App() {
 
           <Route
             exact
-            path="/home"
+            path="/user"
           >
             {user.id ?
               // If the user is already logged in, 

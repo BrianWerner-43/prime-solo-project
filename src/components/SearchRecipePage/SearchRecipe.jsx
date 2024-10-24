@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 import './SearchRecipe.css';
 
@@ -7,8 +9,8 @@ import './SearchRecipe.css';
 function SearchRecipe () {
     const dispatch = useDispatch();
     const [query, setQuery] = useState('');
-    const [searchText, setSearchText] = useState('')
-    const [offset, setOffset] = useState(0);
+    const [searchText, setSearchText] = useState('');
+    const [page, setPage] = useState(1);
     const number = 50;
     const {results, totalResults} = useSelector((store) => store.searchRecipe);
 
@@ -16,7 +18,7 @@ function SearchRecipe () {
         event.preventDefault();   
        if (searchText.trim()) {
         setQuery(searchText)
-        setOffset(0);
+        setPage(1)
         dispatch({type: 'SAGA_SEARCH_RECIPES', payload: {query: searchText, number, offset: 0}});
        }
 
@@ -24,10 +26,16 @@ function SearchRecipe () {
         setSearchText('')
     }
 
-    const handlePageChange = (newOffset) => {
-        setOffset(newOffset);
+
+    const handlePageChange = (event, value) => {
+        setPage(value);
+        const newOffset = (value -1)
         dispatch({type: 'SAGA_SEARCH_RECIPES', payload: {query, number, offset: newOffset}})
+
     }
+
+    // This will be for calculating the total number of pages
+    const totalPages = Math.round(totalResults / number);
 
     return (
      <div className="wrapper">
@@ -51,10 +59,16 @@ function SearchRecipe () {
                 </div>
             ))}
         </div>
-        {/*This will be for the pagination controls, so that results will show up on each page */}
         <div className='pagination'>
-            {offset > 0 && <button onClick={() => handlePageChange(offset - number)}>Previous</button>}
-            {offset + number < totalResults && <button onClick={() => handlePageChange(offset + number)}>Next</button>}
+            <Stack spacing={2}>
+                <Pagination
+                  count={totalPages}
+                  page={page}
+                  onChange={handlePageChange}
+                  variant='outlined'
+                  color='secondary'
+                  />
+            </Stack>
        </div>  
      </div>
     )

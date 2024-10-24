@@ -10,13 +10,15 @@ function EditPage() {
     const {id} = useParams();
     const [editTitle, setEditTitle] = useState('');
     const [recipeImage, setRecipeImage] = useState(null);
-    const [editRecipe, setEditRecipe] = useState('');
+    const [editDescription, setEditDescription] = useState('');
+    const [editIngredients, setEditIngredients] = useState('');
+    const [editProcedure, setEditProcedure] = useState('');
     const user = useSelector((store) => store.user);
     const recipe = useSelector((store) => store.setDetailsReducer)
 
     useEffect(() => {
         dispatch({
-            type: "SAGA_GET_RECIPE",
+            type: "SAGA/EDIT_RECIPE",
             payload: id
         });
     }, [id, dispatch]);
@@ -24,7 +26,9 @@ function EditPage() {
     useEffect(() => {
         if(recipe) {
             setEditTitle(recipe.title)
-            setEditRecipe(recipe.description)
+            setEditDescription(recipe.description)
+            setEditIngredients(recipe.ingredients)
+            setEditProcedure(recipe.procedure)
         }
     }, [recipe])
 
@@ -32,10 +36,12 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         const formData = new FormData();
-        formData.append("image", recipeImage) ;
+        formData.append("image", recipeImage);
         formData.append('title', editTitle);
-        formData.append('description', editRecipe);
-        formData.append('id', id)
+        formData.append('description', editDescription);
+        formData.append('ingredients', editIngredients)
+        formData.append('procedure', editProcedure);
+        formData.append('id', id);
 
         
       // dispatch for the saga and useHistory to navigate back to the user page
@@ -57,21 +63,43 @@ function EditPage() {
                     placeholder='Recipe Title'
                     value={editTitle}
                     />
-
+                    <br></br>
             <input onChange={(event) => setRecipeImage(event.target.files[0])}
                    type="file"
                    name='image'
                    />
-            <textarea onChange={(event) => setEditRecipe(event.target.value)}
+                   <br></br>
+            <textarea onChange={(event) => setEditDescription(event.target.value)}
+                   className='descriptionInput'
+                   name="recipe"
+                   cols="15"
+                   rows="4"
+                   wrap="hard"
+                   placeholder="Edit Description"
+                   value={editDescription}
+                  />
+                  <br></br>
+             <textarea onChange={(event) => setEditIngredients(event.target.value)}
+                   className='ingredientInput'
                    name="recipe"
                    cols="30"
                    rows="20"
                    wrap="hard"
-                   placeholder="Add Recipe"
-                   value={editRecipe}
+                   placeholder="Edit Ingridents"
+                   value={editIngredients}
                   />
                   <br></br>
-            <button type="submit">Submit</button>
+            <textarea onChange={(event) => setEditProcedure(event.target.value)}
+                     className='procedureInput'
+                    name="procedure"
+                    cols="30"
+                    rows="20"
+                    wrap="hard"
+                    placeholder='Edit procedure'
+                    value={editProcedure}
+                    />
+                    <br></br>
+            <button className='submitBtn' type="submit">Submit</button>
             
         </form>
        </div>
