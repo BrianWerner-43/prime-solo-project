@@ -26,7 +26,7 @@ function SearchRecipe () {
         setSearchText('')
     }
 
-
+      // This is for getting the coorect value of results per page load
     const handlePageChange = (event, value) => {
         setPage(value);
         const newOffset = (value -1)
@@ -63,10 +63,11 @@ function SearchRecipe () {
             <Stack spacing={2}>
                 <Pagination
                   count={totalPages}
+                  size='large'
                   page={page}
                   onChange={handlePageChange}
                   variant='outlined'
-                  color='secondary'
+                  color='primary'
                   />
             </Stack>
        </div>  

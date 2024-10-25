@@ -7,7 +7,6 @@ function LoginPage() {
 
   return (
     <div>
-      <h2 className="login-header">Cooking With Confidence</h2>
       <LoginForm />
 
       <center>

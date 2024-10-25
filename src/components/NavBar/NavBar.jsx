@@ -34,7 +34,8 @@ function Navbar() {
     }
     return (
         <nav className="navigation">
-          
+           <h2 className="navHeader">Cooking With Confidence</h2>
+           <p className='navPtag'>Giving you the confidence to cook</p>
         {user.id ? 
             <>
           <button

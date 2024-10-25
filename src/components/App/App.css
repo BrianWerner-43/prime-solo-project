@@ -110,13 +110,6 @@ Container
   text-decoration: underline;
 }
 
-.login-header {
-  color:rgb(243, 168, 70);
-  font-family:"Noconsequence";
-  
-  /* color: rgb(31, 10, 124); */
-  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-}
 
 .info-page {
   color:rgb(243, 168, 70);
@@ -260,6 +253,19 @@ input {
 /* --------------------------------------------------------------------------------
 Navbar
 -------------------------------------------------------------------------------- */
+.navHeader{
+  color:rgb(243, 168, 70);
+  text-shadow: 3px 3px 3px rgb(153, 144, 144);
+  font-family:"Noconsequence";
+  margin-left: 20px;
+}
+
+.navPtag {
+  position: absolute;
+  padding-top: 45px;
+  margin-left: 100px;
+  color:  #9fe7ef;
+}
 
 .navigation {
   height: 80px;
@@ -313,6 +319,7 @@ Navbar
   list-style-type: none;
   margin: 0 1rem;
   color:  #9fe7ef;
+  text-shadow:  1px 1px rgb(205, 194, 194);
 }
 .navigation-menu.expanded li {
   display: block;
@@ -330,7 +337,7 @@ Navbar
   background-color: rgb(4, 79, 75);
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  /* // posi tions the icon to the right and center aligns it vertically */
+  /* // positions the icon to the right and center aligns it vertically */
   position: absolute;
   top: 50%;
   right: 25px;
