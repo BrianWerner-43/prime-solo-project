@@ -61,7 +61,7 @@ function SearchRecipe () {
         </div>
         <div className='pagination'>
             <Stack spacing={2}>
-                <Pagination
+                <Pagination 
                   count={totalPages}
                   size='large'
                   page={page}

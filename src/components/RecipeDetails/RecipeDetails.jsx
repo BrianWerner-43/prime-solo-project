@@ -161,7 +161,7 @@ function RecipeDetails () {
               <Button onClick={handleEditBtn} variant="contained" style={{ backgroundColor: '#FFA726', marginRight: 8 }}>
                 Edit
               </Button>
-              <Button onClick={handleDelete} variant="contained" color="error">
+              <Button onClick={handleDelete} variant="contained" color='error' >
                 Delete
               </Button>
             </CardContent>

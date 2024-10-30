@@ -10,9 +10,6 @@ function* fetchRecipe(action) {
         const response = yield call(axios.get, `/api/searchRecipe?q=${query}&number=${number}&offset=${offset}`);
         console.log('API Response:', response.data)
 
-        // const resultsPayload = response.data.results || [];
-        // console.log('Extracted Results payload:', resultsPayload)
-
         yield put({ type: 'SET_SEARCH_RESULTS', payload:{results: response.data.results, totalResults: response.data.totalResults}});
     }catch (error) {
         console.log('Error fetching recipes from spoonacular API', error)

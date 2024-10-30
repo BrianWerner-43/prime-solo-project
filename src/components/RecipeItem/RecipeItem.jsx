@@ -26,9 +26,9 @@ function RecipeItem({recipe}) {
 
  return (
   <Grid className="card-border">
-        <Card sx={{ minWidth: 250, maxWidth: 250, minHeight: 250, maxHeigh: 250 }}>
+        <Card sx={{ minWidth: 250, maxWidth: 300, minHeight: 300, maxHeight: 380 }}>
           <CardMedia
-            sx={{ height: 400 }}
+            sx={{ height: 300 }}
             image={recipe.image_url}
             title={recipe.title}
             description={recipe.description}
@@ -37,7 +37,7 @@ function RecipeItem({recipe}) {
             onClick={handleClick}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" >
               {recipe.title}
             </Typography>
           </CardContent>

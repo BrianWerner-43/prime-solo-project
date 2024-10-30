@@ -26,6 +26,7 @@ function EditPage() {
     useEffect(() => {
         if(recipe) {
             setEditTitle(recipe.title)
+            setRecipeImage(recipe.image_url)
             setEditDescription(recipe.description)
             setEditIngredients(recipe.ingredients)
             setEditProcedure(recipe.procedure)
