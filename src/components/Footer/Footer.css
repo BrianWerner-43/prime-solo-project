@@ -1,14 +1,14 @@
 footer {
-  /* margin-top: 190px; */
-  /* margin-bottom: 50px; */
+  margin-top: 200px;
+  /* margin-bottom: 15px; */
   padding: 20px;
   text-align: center;
   font-family: "Noconsequence";
   color: rgb(191, 112, 9);
   border: 1px solid black;
   border-radius: 10px;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: #045d0c;
   max-width: 100%;
- 
+  
 }

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 0 0 30px; */
+  margin: 30px;
   background-color: #045d0c;
   overflow: hidden;
   cursor: pointer;
@@ -12,18 +12,10 @@
 
 .nav a {
   text-decoration: none;
+ 
 }
 
-/* .nav-title {
-  font-size: 24px; 
-  height: 100px;
-  font-weight: 700; 
-  background: #34bdcc;
-  color: #0a8896;
-  margin: 0;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  
-} */
+
 
 .navLink {
   display: inline-block;
@@ -41,5 +33,8 @@
 }
 
 .navLink:hover {
-  background-color: #085436;
+  background-color: #136b74;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

@@ -1,6 +1,68 @@
-.wrapper{
+.wrapper {
     text-align: center;
+    padding: 20px;
 }
+
+.searchHeader {
+    text-shadow: 2px 2px 2px rgb(31, 189, 42);
+}
+
+.recipeCards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+   
+}
+
+.recipeCard {
+    width: 280px;
+    transition: box-shadow 0.3s ease;
+    border: 5px sloid green;
+}
+
+.recipeCard:hover {
+    box-shadow: 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recipeTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(11, 146, 20);
+    
+}
+
+.img {
+    border-radius: 5px;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.serach-input {
+    background-color: rgb(188, 230, 191);
+   
+}
+
+
+
+/*----------Original CSS code-----------------*/
+/* .wrapper{
+    text-align: center;
+    
+}
+
 
 .recipeCards {
     display: flex;
@@ -9,7 +71,6 @@
     gap: 10px;
     padding: 30px;
    
-    /* border: 2px solid black; */
 }
 
 .recipeCard {
@@ -19,7 +80,6 @@
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     max-width: 200px;
 }
 
@@ -28,15 +88,15 @@
     color: rgb(48, 48, 48);
     margin: 20px;
     padding: 20px;
-    gap: 16px;
 }
 
 img {
     border: 2px solid black;
     border-radius: 5px;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.1);
 }
 
 .pagination {
     margin-left: 37%;
    
-}
+} */

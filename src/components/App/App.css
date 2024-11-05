@@ -149,63 +149,6 @@ Styling for Edit Page
 }
 
 /* --------------------------------------------------------------------------------
-Button
--------------------------------------------------------------------------------- */
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-color: #014041;
-  border-width: 1px 1px 3px;
-  border-radius: 4px;
-  background-color: #084e4f;
-  color: #f8f8f8;
-  font-size: 1.1rem;
-  outline: 0;
-  height: 40px;
-  cursor: pointer;
-}
-
-.btn_sizeMin {
-  min-height: 100px;
-  min-width: 100px;
-}
-
-.btn_sizeSm {
-  padding: 10px 15px;
-  font-size: 0.7rem;
-}
-
-.btn_sizeFull {
-  display: block;
-  width: 100%;
-  
-}
-
-.btn:hover {
-  background-color: #1e7032;
-  text-decoration: none;
-}
-
-/* This line makes the "Register" and "Login" buttons look like links */
-.btn_asLink {
-  padding: 0;
-  border-width: 0;
-  border-radius: 10px;
-  border: 2px solid rgb(8 33 33);
-  background: none;
-  font: inherit;
-  color:rgb(243, 168, 70);
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
-
-.btn_asLink:hover {
-  background-color: transparent;
-  border-color: #066565;
-  color: #117731;
-}
-
-/* --------------------------------------------------------------------------------
 Alert
 -------------------------------------------------------------------------------- */
 
@@ -231,11 +174,12 @@ Form Treatment
   box-sizing: border-box;
   justify-content: center;
   width: 100%;
+  margin-top: 20px;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 130vh;
   padding: 50px;
   border-radius: 5px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  box-shadow: 0 4px 2px rgb(0, 0, 0, 0.4);
   background-image: url('/public/images/my_dream_kitchen.jpeg');
   background-size: cover;
   font-family:"Noconsequence";
@@ -278,12 +222,44 @@ input {
  
 }
 
+
 .btn {
-  margin-right: 150px;
+  padding: 10px 20px;
+  margin-right: 160px;
   margin-top: 20px;
+  height: 40px;
+  border-radius: 10px;
+  border: solid 1px black;
+  font-size: 1.1rem;
+  cursor: pointer;
   color: rgb(243, 168, 70);
   background-color: #045d0c;
 }
+
+.btn:hover {
+  background-color: #1e7032;
+  text-decoration: none;
+}
+
+/* This line makes the "Register" and "Login" buttons look like links */
+.btn_asLink {
+  display: flex;
+  padding: 10px 20px;
+  margin-right: 140px;
+  margin-top: -195px;
+  border-radius: 10px;
+  color: rgb(243, 168, 70);
+  font-size: 1.1rem;
+  background-color: #045d0c;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.btn_asLink:hover {
+  background-color: #1e7032;
+  /* border-color: #066565; */
+  color: rgb(243, 168, 70);
+}
+
 /* --------------------------------------------------------------------------------
 Navbar
 -------------------------------------------------------------------------------- */
