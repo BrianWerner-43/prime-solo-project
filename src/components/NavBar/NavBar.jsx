@@ -88,10 +88,7 @@ function Navbar() {
           </div>
           
           </>
-          :
-          <li className="nav" onClick={toAbout}>
-            About
-            </li>
+          : null
            }
         </nav>
       )

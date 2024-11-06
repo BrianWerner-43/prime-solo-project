@@ -10,6 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { cyan } from '@mui/material/colors';
 
 
 import './SearchRecipe.css';
@@ -22,6 +23,8 @@ function SearchRecipe () {
     const [page, setPage] = useState(1);
     const number = 25;
     const {results, totalResults} = useSelector((store) => store.searchRecipe);
+    const color = cyan[600]
+
 
     const handleSearch = (event) => {
         event.preventDefault();   
@@ -85,8 +88,8 @@ function SearchRecipe () {
                     <Typography varient='h6' component='h3' fontFamily='Noconsequence' className='recipeTitle'>
                         {recipe.title}
                     </Typography>
-                    <Typography variant='body2' color='textSecondary'  component='p'>
-                        <a href={recipe.sourceUrl}>Click here to get the full recipe</a>    
+                    <Typography  fontFamily='Noconsequence' variant='body2' component='p'>
+                        <a href={recipe.sourceUrl} style={{ color }}>Click here to get the full recipe</a>    
                     </Typography>
                 </CardContent>
             </Card>

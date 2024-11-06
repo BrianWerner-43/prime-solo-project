@@ -14,7 +14,7 @@ function UserPage() {
   console.log('Checking for recipes!')
   
 
-  //This is calling to the store to obtain the recipes
+  //This is calling to the store to obtain the user's recipes
   useEffect(() => {
     dispatch({type: 'SAGA_GET_RECIPE'});
     console.log('Recipes:', recipes);

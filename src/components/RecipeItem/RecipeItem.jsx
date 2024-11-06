@@ -37,7 +37,7 @@ function RecipeItem({recipe}) {
             onClick={handleClick}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div" >
+            <Typography className='cardTitles' gutterBottom variant="h5" component="div" fontFamily="Noconsequence">
               {recipe.title}
             </Typography>
           </CardContent>

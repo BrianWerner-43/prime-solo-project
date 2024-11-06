@@ -25,7 +25,7 @@ function LoginForm() {
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-    history.push('/about')
+    history.push('/user')
 
 
   }; // end login
