@@ -2,80 +2,37 @@
 Container
 ------------------------------------------------------------------------*/
 .container {
-  padding: 20px;
   font-family: "Noconsequence";
   font-weight: bold;
   font-size: large;
   color: rgb(191, 112, 9);
   background-image: radial-gradient(rgb(239, 239, 96), rgb(202, 241, 202));
   border-radius: 10px;
-  margin-left: 300px;
-  margin-top: 40px;
-  padding-left: -4px;
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 15px;
+  margin-bottom: -200px;
+  padding: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 140px;
   text-align: center;
   box-shadow: 0.2rem 0.2rem rgb(58, 60, 60), -0.2rem -0.2rem #12444d;
-  max-width: 800px;
-}
-
-
-/* --------------------------------------------------------------------------------
-Grid
--------------------------------------------------------------------------------- */
-
-.grid {
-  display: flex;
+  max-width: 200vh;
  
 }
 
-.grid-col {
-  flex: 1 0 auto;
-  padding: 1 0.5rem 0.5rem;
-  box-sizing: border-box;
+
+.registerBtn2 .register-btn{
+  display: inline-block;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.memberLogin {
+  margin-top: -200px;
+  
 }
 
 
-
- /* .grid-col_4 {
-  flex-basis: 33.33333333%;
-  max-width: 33.33333333%;
-} */
-
-/* .grid-col_5 {
-  flex-basis: 41.66666667%;
-  max-width: 41.66666667%;
-} */
-
-/* .grid-col_6 {
-  flex-basis: 50%;
-  max-width: 50%;
-} */
-
-/* .grid-col_7 {
-  flex-basis: 58.33333333%;
-  max-width: 58.33333333%;
-} */
-
-/* .grid-col_8 {
-  flex-basis: 66.66666667%;
-  max-width: 66.66666667%;
-} */
-
-/* .grid-col_9 {
-  flex-basis: 75%;
-  max-width: 75%;
-} */
-
-/* .grid-col_10 {
-  flex-basis: 83.33333333%;
-  max-width: 83.33333333%;
-} */
-
-/* .grid-col_11 {
-  flex-basis: 91.66666667%;
-  max-width: 91.66666667%;
-} */
-
-/* .grid-col_12 {
-  flex-basis: 100%;
-  max-width: 100%;
-}  */
+ 

@@ -23,13 +23,13 @@ function RegisterForm() {
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register User</h2>
+      <h2 className='registerHeader'>Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
       )}
-      <div>
+      <div className='registerInputs'>
         <label htmlFor="username">
           Username:
           <input
@@ -41,7 +41,7 @@ function RegisterForm() {
           />
         </label>
       </div>
-      <div>
+      <div className='registerInputs'>
         <label htmlFor="password">
           Password:
           <input
@@ -53,7 +53,7 @@ function RegisterForm() {
           />
         </label>
         </div>
-        <div>
+        <div className='registerInputs'>
         <label htmlFor="email">
           Email:
           <input
@@ -67,7 +67,7 @@ function RegisterForm() {
       </div>
       
       <div>
-        <input className="btn" type="submit" name="submit" value="Register" />
+        <input className="register-btn" type="submit" name="submit" value="Register" />
       </div>
     </form>
   );

@@ -1,9 +1,14 @@
+
+// React Hooks
 import * as React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
+
+// MUI imports for styling the recipe cards:
 import { styled } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
-
-// New MUI imports:
 import {Card, 
        CardHeader,
        CardMedia,
@@ -15,11 +20,10 @@ import {Card,
        Button} from '@mui/material';
 import { green } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useEffect } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
-import './RecipeDetails.css';
+
+// Sweet alert and css imports
 import Swal from 'sweetalert2';
+import './RecipeDetails.css';
 
 // Complex Interaction card material UI function
 const ExpandMore = styled((props) => {
@@ -107,7 +111,8 @@ function RecipeDetails () {
   // New code for reformatting the recipe cards
 
   return (
-    <div className="container">
+    <div className='container'>
+      <center>
       <div className="image-border">
         <Card sx={{ maxWidth: 600, margin: '0 auto' }}>
           <CardHeader 
@@ -168,6 +173,7 @@ function RecipeDetails () {
           </Collapse>
         </Card>
       </div>
+      </center>
     </div>
   );
 }
