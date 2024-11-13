@@ -5,7 +5,7 @@ Container
   font-family: "Noconsequence";
   font-weight: bold;
   font-size: large;
-  color: rgb(191, 112, 9);
+  color: rgb(243, 168, 70);
   background-image: radial-gradient(rgb(239, 239, 96), rgb(202, 241, 202));
   border-radius: 10px;
   margin-top: 100px;
@@ -26,11 +26,11 @@ Container
 .registerBtn2 .register-btn{
   display: inline-block;
   margin-left: 0 !important;
-  margin-right: auto !important;
+  margin-right: 2 !important;
 }
 
 .memberLogin {
-  margin-top: -200px;
+  margin-top: -300px;
   
 }
 

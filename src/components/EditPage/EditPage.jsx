@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import { Button } from '@mui/material';
+
 
 //This page should allow a user to make edits to their recipes as well as changing the image
 function EditPage() {
@@ -37,7 +39,7 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         const formData = new FormData();
-        formData.append("image", recipeImage);
+        formData.append("image_url", recipeImage);
         formData.append('title', editTitle);
         formData.append('description', editDescription);
         formData.append('ingredients', editIngredients)
@@ -53,6 +55,8 @@ function EditPage() {
      history.push('/user');
 
     };
+
+   
     
 
     return (
@@ -64,10 +68,12 @@ function EditPage() {
                     placeholder='Recipe Title'
                     value={editTitle}
                     />
-                    <br></br>
+                    <br />
             <input onChange={(event) => setRecipeImage(event.target.files[0])}
                    type="file"
                    name='image'
+                   placeholder='Recipe Image'
+                   files={recipeImage}
                    />
                    <br></br>
             <textarea onChange={(event) => setEditDescription(event.target.value)}
@@ -100,8 +106,21 @@ function EditPage() {
                     value={editProcedure}
                     />
                     <br></br>
+            <Button onClick={() => history.goBack()} 
+            variant='contained' 
+            size='small' 
+            style={{marginTop: '1px', 
+            padding: '2px',
+            paddingTop: '0', 
+            paddingBottom: '0',
+            marginRight: '5px', 
+            backgroundColor: 'rgb(222 20 20)', 
+            border: '2px solid', 
+            borderRadius: '20px', 
+            color: 'black' }}>
+                prev
+            </Button>
             <button className='submitBtn' type="submit">Submit</button>
-            
         </form>
        </div>
     )

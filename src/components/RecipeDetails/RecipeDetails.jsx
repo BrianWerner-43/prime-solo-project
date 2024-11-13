@@ -120,8 +120,7 @@ function RecipeDetails () {
               <Avatar sx={{ bgcolor: green[600] }} aria-label="logo">
                 cwc
               </Avatar>
-            }
-              
+            }    
           />
           <Typography  variant='h6' component="div" style={{marginBottom: "20px",fontFamily: '"Noconsequence"', color: 'seagreen'}}>
              {details.title}

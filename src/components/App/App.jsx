@@ -49,10 +49,8 @@ function App() {
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/landing" />
 
-
-          {/* Visiting localhost:3000/about will show the about page. */}
           <Route
-            // shows AboutPage at all times (logged in or not)
+            // shows Landing page at all times (logged in or not)
             exact
             path="/landing"
           >
@@ -72,7 +70,15 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows InfoPage else shows AboutPage
+            exact
+            path="/about"
+          >
+            <AboutPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in will show the info page once clicked
             exact
             path="/info"
           >
