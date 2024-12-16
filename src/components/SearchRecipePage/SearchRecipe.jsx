@@ -107,29 +107,6 @@ function SearchRecipe () {
                   />
             </Stack>
        </div>  
-        {/* <div className='recipeCards'>
-            {results.map((recipe) => (
-                <div  key={recipe.id}>
-                    <h3 className='recipeTitle'>{recipe.title}</h3>
-                    <a href={recipe.sourceUrl}> 
-                        <img src={recipe.fullImagePath} alt={recipe.title} />
-                     </a>
-                    <p>Click on an image to get the full recipe</p>
-                </div>
-            ))}
-        </div> */}
-        {/* <div className='pagination'>
-            <Stack spacing={2}>
-                <Pagination 
-                  count={totalPages}
-                  size='large'
-                  page={page}
-                  onChange={handlePageChange}
-                  variant='outlined'
-                  color='primary'
-                  />
-            </Stack>
-       </div>   */}
      </div>
     )
 

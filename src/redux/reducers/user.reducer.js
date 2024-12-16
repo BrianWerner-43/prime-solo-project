@@ -1,32 +1,24 @@
-// const initialState = {
-//   loggedIn: false,
-//   user: {}
-// }
+
+
+const initialState = {
+  id: null,
+  username: null,
+  isGuest: false
+}
+
+
 // Added functionality to have a guest be able to use the app
-const userReducer = (state = {}, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_USER':
-      return action.payload;
-      // return {
-      //   loggedIn: true,
-      //   user: action.payload
-      // }
+      return {...action.payload, isGuest: false};
     case 'UNSET_USER':
-      return {}
-      // return {
-      //   loggedIn: false,
-      //   user: {}
-      // };
-    // case 'SET_GUEST_USER':
-    //   return {
-    //     loggedIn: true,
-    //     user: action.payload
-    //   }
+      return initialState;
+    case 'SET_GUEST_USER':
+      return {id: null, username: 'Guest', isGuest: true};
     default:
       return state;
   }
 };
 
-// user will be on the redux state at:
-// state.user
 export default userReducer;

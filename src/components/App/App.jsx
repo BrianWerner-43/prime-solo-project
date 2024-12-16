@@ -31,9 +31,6 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  
-  
-
   const user = useSelector(store => store.user);
 
   useEffect(() => {
@@ -48,7 +45,6 @@ function App() {
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/landing" />
-
           <Route
             // shows Landing page at all times (logged in or not)
             exact
@@ -72,83 +68,71 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows AboutPage
             exact
-            path="/about"
-          >
+            path="/about" guestCanAccess>
+          
             <AboutPage />
           </ProtectedRoute>
 
           <ProtectedRoute
             // logged in will show the info page once clicked
             exact
-            path="/info"
-          >
+            path="/info" guestCanAccess>
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/addRecipe"  guestCanAccess>
+            <AddRecipe />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/searchRecipe" guestCanAccess>
+            
+            <SearchRecipe />
           </ProtectedRoute>
 
           <Route
             exact
-            path="/login"
-          >
-            
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the login page
-              <LoginPage />
-            }
-          </Route>
-
-          <Route
-            exact
-            path="/registration"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the registration page
-              <RegisterPage />
-            }
-          </Route>
-
-          <Route
-            exact
-            path="/user"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the Landing page
-              <LandingPage />
-            }
-          </Route>
-
-          <Route exact path='/landing'>
-            <LandingPage />
-          </Route>
+            path="/login">
+           {user.id ? (
+            <Redirect to="/user" />
+           ) : user.isGuest ? (
+            <Redirect to="/searchRecipe" />
+           ) : (
+            <LoginPage />
+           )}
           
+          </Route>
+
+          <Route
+            exact
+            path="/registration">
+            {user.id ? (
+              <Redirect to="/user" />
+            ) : (
+              <RegisterPage />
+            )}
+  
+          </Route>
           <Route
             exact
             path="/details/:id">
              <RecipeDetails />
           </Route>
 
-          <Route
+          {/* <Route
             exact
             path="/addRecipe">
               <AddRecipe />
-          </Route>
+          </Route> */}
 
-          <Route
+          {/* <Route
             exact
             path="/searchRecipe">
               <SearchRecipe />
-          </Route>
+          </Route> */}
 
           <Route
             exact

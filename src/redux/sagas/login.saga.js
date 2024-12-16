@@ -69,20 +69,25 @@ function* logoutUser(action) {
     // remove the client-side user object to let
     // the client-side code know the user is logged out
 
-    // Handling logout for a guest
-    // if(action.payload.isGuest) {
-    //   yield put({type: 'SET_GUEST_USER', payload: []})
-    // } else {
+   
     yield put({ type: 'UNSET_USER' });
-    // }
   } catch (error) {
     console.log('Error with user logout:', error);
+  }
+}
+
+function* guestLogin() {
+  try {
+    yield put({ type: 'SET_GUEST_USER', guestLogin})
+  } catch (error) {
+    console.log('Error with guest login', error)
   }
 }
 
 function* loginSaga() {
   yield takeLatest('LOGIN', loginUser);
   yield takeLatest('LOGOUT', logoutUser);
+  yield takeLatest('GUEST_LOGIN', guestLogin);
 }
 
 export default loginSaga;

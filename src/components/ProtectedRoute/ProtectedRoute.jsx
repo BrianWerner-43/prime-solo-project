@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import LoginPage from '../LoginPage/LoginPage';
+// import LoginPage from '../LoginPage/LoginPage';
 import {useSelector} from 'react-redux';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
@@ -13,12 +13,14 @@ import {useSelector} from 'react-redux';
 // by checking req.isAuthenticated for authentication
 // and by checking req.user for authorization
 
-function ProtectedRoute({ component, children, ...props }) {
+function ProtectedRoute({ component: Component, children, guestCanAccess, ...props }) {
   const user = useSelector((store) => store.user);
 
   // Component may be passed in as a "component" prop,
   // or as a child component.
-  const ProtectedComponent = component || (() => children);
+  const ProtectedComponent = Component || (() => children);
+
+
 
   // We return a Route component that gets added to our list of routes
   return (
@@ -26,14 +28,17 @@ function ProtectedRoute({ component, children, ...props }) {
       // all props like 'exact' and 'path' that were passed in
       // are now passed along to the 'Route' Component
       {...props}
-    >
-      {user.id ?
-        // If the user is logged in, show the protected component
-        <ProtectedComponent />
-        :
-        // Otherwise, redirect to the Loginpage
-        <LoginPage />
+      render={(routeProps) => 
+        // Allow access if user is logged in or it is a guest accessible route
+        user.id || (user.isGuest && guestCanAccess) ? (
+          <ProtectedComponent {...routeProps} />
+        ) : (
+          // Redirect to login or search page if a guest
+          <Redirect to="/login" />
+        )
       }
+    >
+     
     </Route>
 
   );

@@ -111,10 +111,10 @@ function RecipeDetails () {
   // New code for reformatting the recipe cards
 
   return (
-    <div className='container'>
+    <div className='recipeDetails'>
       <center>
       <div className="image-border">
-        <Card sx={{ maxWidth: 600, margin: '0 auto' }}>
+        <Card sx={{ maxWidth: 600,  margin: '0 auto' }}>
           <CardHeader 
             avatar={
               <Avatar sx={{ bgcolor: green[600] }} aria-label="logo">
@@ -122,12 +122,16 @@ function RecipeDetails () {
               </Avatar>
             }    
           />
-          <Typography  variant='h6' component="div" style={{marginBottom: "20px",fontFamily: '"Noconsequence"', color: 'seagreen'}}>
+          <Typography  
+            variant='h6' 
+            component="div" 
+            style={{marginBottom: "20px",fontFamily: '"Noconsequence"', color: 'seagreen'}}>
              {details.title}
-            </Typography>
+          </Typography>
+
           <CardMedia
             component="img"
-            height="300"
+            height="400"
             image={details.image_url}
           />
           <CardContent>
