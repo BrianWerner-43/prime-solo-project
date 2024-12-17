@@ -24,7 +24,7 @@ function* loginUser(action) {
     console.log('Error with user login:', error.response ? error.response.data : error.message);// 👈 line 24
     // if (error.response.status === 401) { 👈 start of orginal code
 
-    // 👉 This is some new code for  trouble-shooting the login issue
+    // 👉 This is some new code for trouble-shooting the login issue
       if (error.response) {
         console.log('error.response.data:', error.response.data)
       } else if (error.request) {

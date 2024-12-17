@@ -60,30 +60,21 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
-          >
+            path="/user">
+          
             <UserPage />
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows AboutPage
             exact
-            path="/about" guestCanAccess>
-          
+            path="/about" guestCanAccess={true}> 
             <AboutPage />
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in will show the info page once clicked
             exact
             path="/info" guestCanAccess>
             <InfoPage />
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            exact
-            path="/addRecipe"  guestCanAccess>
-            <AddRecipe />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -117,22 +108,15 @@ function App() {
   
           </Route>
           <Route
+          exact
+          path="/addRecipe">
+            <AddRecipe />
+          </Route>
+          <Route
             exact
             path="/details/:id">
              <RecipeDetails />
           </Route>
-
-          {/* <Route
-            exact
-            path="/addRecipe">
-              <AddRecipe />
-          </Route> */}
-
-          {/* <Route
-            exact
-            path="/searchRecipe">
-              <SearchRecipe />
-          </Route> */}
 
           <Route
             exact

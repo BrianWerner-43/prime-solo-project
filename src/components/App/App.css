@@ -48,7 +48,8 @@ Styling for redipe cards
   margin: 5px;
   width: fit-content;
   flex-flow: column; 
- 
+  /* transition: box-shadow 0.3s ease; */
+  box-shadow: 2px 4px 2px gray;
 }
 
 .card-bottom {

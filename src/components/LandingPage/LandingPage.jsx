@@ -8,7 +8,7 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome to Cooking with Confidence an easy to use app to give you the confidence to cook at home!');
+  const [heading, setHeading] = useState('Welcome to Cooking with Confidence an easy to use app to use to save all of your favorite recipes!');
   const history = useHistory();
   const dispatch = useDispatch();
 
