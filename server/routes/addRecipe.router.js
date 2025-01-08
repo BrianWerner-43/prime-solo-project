@@ -37,8 +37,8 @@ router.put('/:id', cloudinaryUpload.single('image'), async(req, res) => {
       console.log('Incoming PUT request for ID:', req.params.id);
       console.log('Request Body:', req.body);
       console.log('Request file:', req.file)
-      let imageUrl = req.body.image_url;
 
+      let imageUrl = req.body.image_url;
       if (req.file) {
          imageUrl = req.file.path;
       }

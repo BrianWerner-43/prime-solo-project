@@ -39,7 +39,7 @@ function EditPage() {
     const handleEdit = (event) => {
         event.preventDefault();
         const formData = new FormData();
-        formData.append("image_url", recipeImage);
+        formData.append("image", recipeImage);
         formData.append('title', editTitle);
         formData.append('description', editDescription);
         formData.append('ingredients', editIngredients)
