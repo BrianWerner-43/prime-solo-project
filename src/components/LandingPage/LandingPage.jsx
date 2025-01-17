@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { motion } from 'framer-motion';
 
 import './LandingPage.css';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-function LandingPage() {
+function LandingPage({ routeVariants}) {
   const [heading, setHeading] = useState('Welcome to Cooking with Confidence an easy to use app to use to save all of your favorite recipes!');
   const history = useHistory();
   const dispatch = useDispatch();
@@ -23,6 +24,11 @@ function LandingPage() {
   }
 
   return (
+    <motion.div
+      initial="initial"
+      animate="final"
+      variants={routeVariants}
+    >
     <div className="container">
       <h2>{heading}</h2>
        
@@ -44,6 +50,7 @@ function LandingPage() {
         </center>
        
     </div>
+    </motion.div>
   );
 }
 
