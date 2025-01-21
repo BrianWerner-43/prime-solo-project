@@ -8,7 +8,7 @@ import './LandingPage.css';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-function LandingPage({ routeVariants}) {
+function LandingPage({ routeVariants }) {
   const [heading, setHeading] = useState('Welcome to Cooking with Confidence an easy to use app to use to save all of your favorite recipes!');
   const history = useHistory();
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ function LandingPage({ routeVariants}) {
           <RegisterForm />
         </div>
          <center className='memberLogin'>
-            <h4>Already a Member?</h4>
+            <h4 className='memberHeader'>Already a Member?</h4>
             <button className="btn" onClick={onLogin}>
               Login
             </button>

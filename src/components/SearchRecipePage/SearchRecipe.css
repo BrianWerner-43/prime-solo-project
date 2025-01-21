@@ -1,20 +1,12 @@
-.wrapper {
+/* .wrapper {
     text-align: center;
     padding: 20px;
-}
+} */
 
 .searchHeader {
     text-shadow: 2px 2px 2px rgb(31, 189, 42);
 }
 
-.recipeCards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-   
-}
 
 .recipeCard {
     width: 280px;

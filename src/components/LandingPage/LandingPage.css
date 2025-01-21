@@ -1,12 +1,12 @@
 /* ---------------------------------------------------------------------
 Container
 ------------------------------------------------------------------------*/
-.container {
+.container, .recipeDetails, .wrapper {
   font-family: "Noconsequence";
   font-weight: bold;
   font-size: large;
   color: rgb(243, 168, 70);
-  text-shadow: 2px 2px black;
+  /* text-shadow: 2px 2px black; */
   background-image: radial-gradient(rgb(239, 239, 96), rgb(202, 241, 202));
   border-radius: 20px;
   margin-top: 100px;
@@ -20,9 +20,11 @@ Container
   text-align: center;
   box-shadow: 0.2rem 0.2rem rgb(58, 60, 60), -0.2rem -0.2rem #12444d;
   max-width: 200vh;
- 
 }
 
+.memberHeader {
+  margin-top: 40px;
+}
 
 .registerBtn2 .register-btn{
   display: inline-block;

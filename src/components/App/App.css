@@ -56,10 +56,12 @@ Styling for redipe cards
   height: 60px;
 }
 
-.card-container {
- flex-wrap: wrap;
+.card-container, .recipeCards { 
  display: flex;
  justify-content: center;
+ flex-wrap: wrap;
+ gap: 15px;
+ margin-top: 20px;
  transition: box-shadow 0.3s ease;
 }
 
@@ -72,7 +74,7 @@ Styling for redipe cards
 
 
 /* --------------------------------------------------------------------------------
-Container
+Styles for About me page
 -------------------------------------------------------------------------------- */
 
 
@@ -233,7 +235,7 @@ input {
 .btn {
   padding: 10px 20px;
   margin-right: 160px;
-  margin-top: 20px;
+  margin-top: -40px;
   height: 40px;
   border-radius: 10px;
   border: solid 1px black;
@@ -253,7 +255,7 @@ input {
   display: flex;
   padding: 10px 20px;
   margin-right: 140px;
-  margin-top: -325px;
+  margin-top: -315px;
   border-radius: 10px;
   color: rgb(243, 168, 70);
   font-size: 1.1rem;
@@ -299,6 +301,7 @@ input {
 .register-btn {
   display: flex;
   padding: 10px 20px;
+  margin-top: -40px;
   margin-left: 580px;
   margin-right: 140px;
   border-radius: 10px;
@@ -320,8 +323,8 @@ Navbar
 
 .navPtag {
   position: absolute;
-  padding-top: 45px;
-  margin-left: 100px;
+  padding-top: 60px;
+  margin-left: 20px;
   color:  #9fe7ef;
 }
 
@@ -435,6 +438,27 @@ Navbar
   .navigation-menu.expanded ul {
     display: block;
     color: #FFA372;
+  }
+}
+
+/*----------Responsive styles------------------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .recipeCard {
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .procedure-input {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Noconsequence";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 9px;
   }
 }
 

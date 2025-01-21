@@ -30,18 +30,6 @@ function LoginForm() {
 
   }; // end login
 
-  // const handleGuest = () => {
-  //   console.log('Is handle guest working?');
-  //   dispatch({
-  //     type: 'SET_GUEST_USER',
-  //     payload: {
-  //       username: 'guest'
-        
-  //     }
-  //   })
-  
-    
-  // }
  
 
   return (
@@ -82,8 +70,7 @@ function LoginForm() {
         </center>
       </div>
       <div>
-        {/* <button  className='btn' type="button" onClick={handleGuest}>Continue as Guest </button> */}
-      </div>
+    </div>
     </form>
   );
 }

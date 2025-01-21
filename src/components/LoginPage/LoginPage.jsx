@@ -1,13 +1,19 @@
 import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-function LoginPage() {
+function LoginPage({ routeVariants }) {
   const history = useHistory();
 
   
 
   return (
+    <motion.div
+    initial="initial"
+    animate="final"
+    variants={routeVariants}
+  >
     <div>
       <LoginForm />
 
@@ -23,6 +29,7 @@ function LoginPage() {
         </button>
       </center>
     </div>
+    </motion.div>
   );
 }
 

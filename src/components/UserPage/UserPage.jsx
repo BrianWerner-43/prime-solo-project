@@ -2,12 +2,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import RecipeItem from '../RecipeItem/RecipeItem';
+import { motion } from 'framer-motion';
 
 
 
 // This page will display the users recipes
 // They should be able to click on the recipe and be navigated to the recipe details page
-function UserPage() {
+function UserPage({ routeVariants }) {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const recipes = useSelector((store) => store.recipe);
@@ -23,6 +24,11 @@ function UserPage() {
   
 
   return (
+    <motion.div
+    initial="initial"
+    animate="final"
+    variants={routeVariants}
+  >
     <div className="container">
       <h2>Welcome, {user.username}</h2>
       <h3>Here are your Recipes!</h3>
@@ -38,6 +44,7 @@ function UserPage() {
         ))}
       </div>  
     </div>
+    </motion.div>
   );
 }
 
