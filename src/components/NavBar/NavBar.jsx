@@ -13,10 +13,7 @@ function Navbar() {
       setIsNavExpanded(false)
       history.push(`/user`)
     }
-    const toInfo = () => {
-      setIsNavExpanded(false)
-      history.push(`/info`)
-    }
+    
     const toSearch = () => {
       setIsNavExpanded(false)
       history.push(`/searchRecipe`)
@@ -61,9 +58,7 @@ function Navbar() {
                   <li className="nav" onClick={toSearch}>
                        Search Recipes
                   </li>
-                  <li className="nav" onClick={toInfo}>
-                      Info Page
-                  </li>
+                 
                   <li className="nav" onClick={toAbout}>
                       About
                   </li>

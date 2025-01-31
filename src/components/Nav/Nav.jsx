@@ -11,9 +11,6 @@ function Nav() {
 
   return (
     <div className="nav">
-      {/* <Link to="/home"> */}
-        {/* <img className="nav-title" src="/images/chef_dude.jpeg" /> */}
-      {/* </Link> */}
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (

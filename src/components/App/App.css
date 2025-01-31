@@ -1,17 +1,4 @@
-/* @font-face {
-  font-family: "chlorinar";
-  src: url("../../../public/chlorinar.ttf");
-} */
 
-/* @font-face {
-  font-family: "Most Wazted";
-  src: url("../../../public/Most\ Wazted.ttf");
-} */
-
-/* @font-face {
-  font-family: "Simpsonfont";
-  src: url("../../../public/Simpsonfont.ttf");
-} */
 
 @font-face {
   font-family: "Noconsequence";
@@ -20,24 +7,13 @@
 
 html,
 body,
-/* #react-root {
-  height: 100%;
-  font-family: "Noconsequence";
-  color: antiquewhite;
-} */
+
 
 body {
-  /* font-family: "chlorinar"; */
+ 
   margin: 0px;
   flex-flow: row;
 }
-
-/* img {
-  display: inline-block;
-  flex-direction: row-reverse;
-  max-width: 100%;
-} */
-
 
 /*-------------------------------------------------------------
 Styling for redipe cards
@@ -458,7 +434,7 @@ Navbar
     border-radius: 5px;
     font-family: "Noconsequence";
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-left: 9px;
+    
   }
 }
 

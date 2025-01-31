@@ -4,7 +4,7 @@ import {
   Redirect,
   Route,
   Switch,
-  useLocation
+  
 } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-// import LocationProvder from '../LocationProvider.jsx';
+
 
 
 // Component pages
@@ -24,7 +24,6 @@ import SearchRecipe from '../SearchRecipePage/SearchRecipe';
 import EditPage from '../EditPage/EditPage';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -37,7 +36,6 @@ import './App.css';
 
 function App( ) {
   const dispatch = useDispatch();
-  // const location = useLocation();
   const user = useSelector(store => store.user);
 
   useEffect(() => {
@@ -89,16 +87,6 @@ function App( ) {
             
               <LandingPage routeVariants={landingVariants}/>
           </Route>
-          {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          {/* <Redirect exact from="/" to="/landing" /> */}
-          {/* <Route */}
-            {/* // shows Landing page at all times (logged in or not)
-            exact
-            path="/landing" */}
-          {/* > */}
-
-            
-          {/* </Route> */}
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -116,12 +104,6 @@ function App( ) {
             exact
             path="/about" guestCanAccess={true}> 
             <AboutPage routeVariants={routeVariants}/>
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            exact
-            path="/info" guestCanAccess={true}>
-            <InfoPage routeVariants={routeVariants}/>
           </ProtectedRoute>
 
           <ProtectedRoute

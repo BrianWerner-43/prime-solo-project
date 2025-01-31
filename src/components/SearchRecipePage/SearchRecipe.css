@@ -1,7 +1,4 @@
-/* .wrapper {
-    text-align: center;
-    padding: 20px;
-} */
+
 
 .searchHeader {
     text-shadow: 2px 2px 2px rgb(31, 189, 42);
@@ -12,10 +9,11 @@
     width: 280px;
     transition: box-shadow 0.3s ease;
     border: 5px sloid green;
+    text-shadow: 1px 0 1px rgb(58, 55, 55);
 }
 
 .recipeCard:hover {
-    box-shadow: 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px  rgba(60, 58, 58, 0.1);
 }
 
 .recipeTitle {
@@ -49,46 +47,3 @@
 
 
 
-/*----------Original CSS code-----------------*/
-/* .wrapper{
-    text-align: center;
-    
-}
-
-
-.recipeCards {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 30px;
-   
-}
-
-.recipeCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    max-width: 200px;
-}
-
-.recipeTitle {
-    font-family: "Noconsequence";
-    color: rgb(48, 48, 48);
-    margin: 20px;
-    padding: 20px;
-}
-
-img {
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 6px 6px rgba(0,0,0,0.1);
-}
-
-.pagination {
-    margin-left: 37%;
-   
-} */
