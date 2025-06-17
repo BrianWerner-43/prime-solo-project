@@ -117,7 +117,7 @@ function RecipeDetails () {
         <Card sx={{ maxWidth: 600,  margin: '0 auto ' }}>
           <CardHeader 
             avatar={
-              <Avatar sx={{ bgcolor: green[600] }} aria-label="logo">
+              <Avatar sx={{ bgcolor: green[600], position: "unset"}} aria-label="logo">
                 cwc
               </Avatar>
             }    
@@ -177,7 +177,7 @@ function RecipeDetails () {
         </Card>
       </div>
       </center>
-    </div>
+    </div> 
   );
 }
 export default RecipeDetails;
