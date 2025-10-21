@@ -55,7 +55,7 @@ Styles for About me page
 
 
 .about-me {
-  color: antiquewhite;
+  color:#045d0c;
   font-family:"Noconsequence";
   text-align: center;
 }
@@ -277,7 +277,7 @@ input {
 .register-btn {
   display: flex;
   padding: 10px 20px;
-  margin-top: -40px;
+  margin-top: -10px;
   margin-left: 580px;
   margin-right: 140px;
   border-radius: 10px;
